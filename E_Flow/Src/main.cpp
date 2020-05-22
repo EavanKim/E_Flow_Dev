@@ -9,15 +9,15 @@ int main()
 	{
 		0.f //First Wave Position
 		, 1.f //First Wave Speed
-		, 0.8f //First Wave Length
-		, 0.5f //First Wave Maximum Height
+		, 0.5f //First Wave Length
+		, 0.2f //First Wave Maximum Height
 	};
 	WaveData Y = 
 	{ 
 		1.f //Second Wave Position
 		, -1.f //Second Wave Speed
-		, 1.2f //Second Wave Length
-		, 0.4f //Second Wave Maximum Height
+		, 0.8f //Second Wave Length
+		, 0.1f //Second Wave Maximum Height
 	};
 
 	std::array<float, kBufferSize> heightField;

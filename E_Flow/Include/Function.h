@@ -14,7 +14,7 @@ HeightInfo CalcHeight(const float _x, const float _quarterWaveLength, const floa
 	}
 
 	float distance = std::fabs((Count + 0.5f) / _kBufferSize - _x);
-	float min = std::min(distance * M_PI / _quarterWaveLength, M_PI);
+	float min = std::min(distance * M_PI / (_quarterWaveLength + 0.3f), M_PI);
 	float height = maxHeight * 0.5f * (std::cos(min)) + 1.0f;
 
 	return HeightInfo(iNew, height);
@@ -25,6 +25,7 @@ void accumulateWaveToHeightField(WaveData* _Data, std::array<float, kBufferSize>
 	const int size = heightField.size();
 	const int first = (*_Data).Start(heightField.size());
 	const int last = (*_Data).End(heightField.size());
+
 	for (int Index = first; last > Index;++Index)
 	{
 		HeightInfo GetHeight = CalcHeight((*_Data).Position, (*_Data).QuarterWaveLength, (*_Data).MaxHeight, Index, size);
@@ -40,8 +41,9 @@ void DrawOnCMD(std::array<float, kBufferSize>& heightField)
 
 	for (size_t Index = 0; ArraySize > Index; ++Index)
 	{
-		float height = heightField[Index];
-		size_t tableIndex = std::min(static_cast<size_t>(std::floor(kGrayScaleTableSize * height)), kGrayScaleTableSize - 1);
+		float height = heightField[Index] * 0.3f;
+		float value = kGrayScaleTableSize * height;
+		size_t tableIndex = std::min(static_cast<size_t>(std::floor(value)), kGrayScaleTableSize - 1);
 		buffer[Index] = kGrayScaleTable[tableIndex];
 	}
 
