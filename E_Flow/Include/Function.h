@@ -14,7 +14,8 @@ HeightInfo CalcHeight(const float _x, const float _quarterWaveLength, const floa
 	}
 
 	float distance = std::fabs((Count + 0.5f) / _kBufferSize - _x);
-	float height = maxHeight * 0.5f * (std::cos(std::fminf(distance * M_PI / _quarterWaveLength, M_PI))) + 1.0f;
+	float min = std::min(distance * M_PI / _quarterWaveLength, M_PI);
+	float height = maxHeight * 0.5f * (std::cos(min)) + 1.0f;
 
 	return HeightInfo(iNew, height);
 }
@@ -27,7 +28,7 @@ void accumulateWaveToHeightField(WaveData* _Data, std::array<float, kBufferSize>
 	for (int Index = first; last > Index;++Index)
 	{
 		HeightInfo GetHeight = CalcHeight((*_Data).Position, (*_Data).QuarterWaveLength, (*_Data).MaxHeight, Index, size);
-		heightField.data()[GetHeight.Index] = GetHeight.Height;
+		heightField.data()[GetHeight.Index] += GetHeight.Height;
 	}
 }
 

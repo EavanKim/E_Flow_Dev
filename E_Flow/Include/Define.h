@@ -54,7 +54,7 @@ struct WaveData
 
 	float GetQuarterWaveLength()
 	{
-		return 0.25f * WaveLength;
+		return 0.35f * WaveLength;
 	}
 
 	int Start(int _BufferSize)
