@@ -7,11 +7,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="Include\Define.h" />
+    <ClInclude Include="Include\Function.h" />
+    <ClInclude Include="Include\pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="Function.h" />
-    <ClInclude Include="Define.h" />
+    <ClCompile Include="Src\main.cpp" />
   </ItemGroup>
 </Project>
