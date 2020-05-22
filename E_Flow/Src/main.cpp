@@ -1,7 +1,5 @@
 #include "pch.h"
 
-
-
 int main()
 {	
 	const int fps = 100;
@@ -32,8 +30,10 @@ int main()
 
 		memset(heightField.data(), 0, kBufferSize * sizeof(float));
 
-		accumulateWaveToHeightField(&X, &heightField);
-		accumulateWaveToHeightField(&Y, &heightField);
+		accumulateWaveToHeightField(&X, heightField);
+		accumulateWaveToHeightField(&Y, heightField);
+
+		DrawOnCMD(heightField);
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000 / fps));
 	}

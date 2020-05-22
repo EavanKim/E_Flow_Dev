@@ -1,10 +1,11 @@
-
+//
 #include <iostream>
 #include <cstdio>
 #include <array>
 #include <chrono>
 #include <thread>
+#include <cmath>
 
-const size_t kBufferSize = 100;
-
+//
+#include "Define.h"
 #include "Function.h"
