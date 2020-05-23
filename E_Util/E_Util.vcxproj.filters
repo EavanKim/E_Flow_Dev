@@ -13,16 +13,43 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="헤더 파일\Container">
+      <UniqueIdentifier>{13f0bcbc-f538-48ab-89ed-a4420d31ea59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Container\Array">
+      <UniqueIdentifier>{82ccf8aa-5f78-4fe8-946e-6d0eeb419908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Vector">
+      <UniqueIdentifier>{75f017ae-ad18-4d42-ba73-b611f1d0a8bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Define.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Array.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Include\pch.hpp">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Array.hpp">
+      <Filter>헤더 파일\Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Array_Impl.hpp">
+      <Filter>헤더 파일\Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Array2.hpp">
+      <Filter>헤더 파일\Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Array2_Impl.hpp">
+      <Filter>헤더 파일\Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Array3.hpp">
+      <Filter>헤더 파일\Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Array3_Impl.hpp">
+      <Filter>헤더 파일\Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Vector.hpp">
+      <Filter>헤더 파일\Vector</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

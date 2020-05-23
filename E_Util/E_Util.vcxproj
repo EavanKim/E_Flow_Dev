@@ -155,8 +155,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Include\Array.hpp" />
+    <ClInclude Include="Include\Array2.hpp" />
+    <ClInclude Include="Include\Array2_Impl.hpp" />
+    <ClInclude Include="Include\Array3.hpp" />
+    <ClInclude Include="Include\Array3_Impl.hpp" />
+    <ClInclude Include="Include\Array_Impl.hpp" />
     <ClInclude Include="Include\Define.hpp" />
     <ClInclude Include="Include\pch.hpp" />
+    <ClInclude Include="Include\Vector.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
