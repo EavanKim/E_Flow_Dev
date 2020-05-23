@@ -1,13 +1,13 @@
 #include <utilpch.hpp>
 
 template<typename T>
-inline Array<T, 1>::Array()
+Array<T, 1>::Array()
 {
 
 }
 
 template<typename T>
-inline T& Array<T, 1>::operator[](size_t _Index)
+T& Array<T, 1>::operator[](size_t _Index)
 {
 	// TODO: 여기에 return 문을 삽입합니다.
 
@@ -15,14 +15,14 @@ inline T& Array<T, 1>::operator[](size_t _Index)
 }
 
 template<typename T>
-inline const T& Array<T, 1>::operator[](size_t _Index) const
+const T& Array<T, 1>::operator[](size_t _Index) const
 {
 	// TODO: 여기에 return 문을 삽입합니다.
 	return NULL;
 }
 
 template<typename T>
-inline size_t Array<T, 1>::size() const
+size_t Array<T, 1>::size() const
 {
 	return size_t();
 }

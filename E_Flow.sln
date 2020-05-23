@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E_Flow", "E_Flow\E_Flow.vcxproj", "{C93F7C8D-F75C-41F6-92A1-97D991C4DF4B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Particle", "Particle\Particle.vcxproj", "{D4D692D6-9B71-4DD1-8EF0-7AA1E9248DB8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E4669AAE-2A7A-42C3-87B2-84F12CE80FFB} = {E4669AAE-2A7A-42C3-87B2-84F12CE80FFB}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E_Util", "E_Util\E_Util.vcxproj", "{E4669AAE-2A7A-42C3-87B2-84F12CE80FFB}"
 EndProject

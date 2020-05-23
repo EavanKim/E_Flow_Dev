@@ -39,29 +39,8 @@
     <ClInclude Include="Include\Define.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Array.hpp">
-      <Filter>헤더 파일\Container\Array</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Array2.hpp">
-      <Filter>헤더 파일\Container\Array</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Array3.hpp">
-      <Filter>헤더 파일\Container\Array</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Vector.hpp">
       <Filter>헤더 파일\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Size.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Size2.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Size3.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\ArrayAccessor.hpp">
-      <Filter>헤더 파일\Container\Accessor</Filter>
     </ClInclude>
     <ClInclude Include="Include\utilpch.hpp">
       <Filter>헤더 파일</Filter>
@@ -70,18 +49,6 @@
   <ItemGroup>
     <ClCompile Include="Src\Vector.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Array.cpp">
-      <Filter>소스 파일\Container\Array</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Array2.cpp">
-      <Filter>소스 파일\Container\Array</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Array3.cpp">
-      <Filter>소스 파일\Container\Array</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\ArrayAccessor.cpp">
-      <Filter>소스 파일\Container\Accessor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
