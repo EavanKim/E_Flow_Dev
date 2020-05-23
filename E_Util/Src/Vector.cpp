@@ -128,30 +128,32 @@ namespace util
 
 	float Vector::cross3(__m128 _Vector) const
 	{
-		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_data.m128_f32[1], _data.m128_f32[2], _data.m128_f32[0], 0.f);
-		__declspec (align (128)) __m128 Temp2 = _mm_set_ps(_Vector.m128_f32[2], _Vector.m128_f32[0], _Vector.m128_f32[1], 0.f);
-		__declspec (align (128)) __m128 Temp3 = _mm_set_ps(_data.m128_f32[2], _data.m128_f32[0], _data.m128_f32[1], 0.f);
-		__declspec (align (128)) __m128 Temp4 = _mm_set_ps(_Vector.m128_f32[1], _Vector.m128_f32[0], _Vector.m128_f32[2], 0.f);
+		//__declspec (align (128)) __m128 Temp0 = _mm_set_ps(_data.m128_f32[1], _data.m128_f32[2], _data.m128_f32[0], 0.f);
+		//__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_Vector.m128_f32[2], _Vector.m128_f32[0], _Vector.m128_f32[1], 0.f);
+		//__declspec (align (128)) __m128 Temp2 = _mm_set_ps(_data.m128_f32[2], _data.m128_f32[0], _data.m128_f32[1], 0.f);
+		//__declspec (align (128)) __m128 Temp3 = _mm_set_ps(_Vector.m128_f32[1], _Vector.m128_f32[0], _Vector.m128_f32[2], 0.f);
 
-		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(Temp1, Temp2);
-		__declspec (align (128)) __m128 Mul2 = _mm_mul_ps(Temp3, Temp4);
+		//__declspec (align (128)) __m128 Mul0 = _mm_mul_ps(Temp0, Temp1);
+		//__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(Temp2, Temp3);
 
-		__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul1, Mul2);
+		//__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul0, Mul1);
+
+		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(_Vector.m128_f32[1], _Vector.m128_f32[2], _Vector.m128_f32[0], 0.f);
+		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_Vector.m128_f32[0], _Vector.m128_f32[2], _Vector.m128_f32[1], 0.f);
+		__declspec (align (128)) __m128 Mul0 = _mm_mul_ps(_data, Temp0);
+		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(_data, Temp1);
+		__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul0, Mul1);
 
 		return Return.m128_f32[0] + Return.m128_f32[1] + Return.m128_f32[2];
 	}
 
 	float Vector::cross3(const Vector& _Vector) const
 	{
-		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_data.m128_f32[1], _data.m128_f32[2], _data.m128_f32[0], 0.f);
-		__declspec (align (128)) __m128 Temp2 = _mm_set_ps(_Vector._data.m128_f32[2], _Vector._data.m128_f32[0], _Vector._data.m128_f32[1], 0.f);
-		__declspec (align (128)) __m128 Temp3 = _mm_set_ps(_data.m128_f32[2], _data.m128_f32[0], _data.m128_f32[1], 0.f);
-		__declspec (align (128)) __m128 Temp4 = _mm_set_ps(_Vector._data.m128_f32[1], _Vector._data.m128_f32[0], _Vector._data.m128_f32[2], 0.f);
-
-		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(Temp1, Temp2);
-		__declspec (align (128)) __m128 Mul2 = _mm_mul_ps(Temp3, Temp4);
-
-		__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul1, Mul2);
+		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(_Vector._data.m128_f32[1], _Vector._data.m128_f32[2], _Vector._data.m128_f32[0], 0.f);
+		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_Vector._data.m128_f32[0], _Vector._data.m128_f32[2], _Vector._data.m128_f32[1], 0.f);
+		__declspec (align (128)) __m128 Mul0 = _mm_mul_ps(_data, Temp0);
+		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(_data, Temp1);
+		__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul0, Mul1);
 
 		return Return.m128_f32[0] + Return.m128_f32[1] + Return.m128_f32[2];
 	}
