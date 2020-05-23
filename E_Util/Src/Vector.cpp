@@ -114,6 +114,46 @@ namespace util
 		return Vector(_mm_div_ps(_data, _Vector._data));
 	}
 
+	Vector Vector::operator+(__m128 _Vector) const
+	{
+		return Vector(_mm_add_ps(_data, _Vector));
+	}
+
+	Vector Vector::operator+(const Vector& _Vector) const
+	{
+		return Vector(_mm_add_ps(_data, _Vector._data));
+	}
+
+	Vector Vector::operator-(__m128 _Vector) const
+	{
+		return Vector(_mm_sub_ps(_data, _Vector));
+	}
+
+	Vector Vector::operator-(const Vector& _Vector) const
+	{
+		return Vector(_mm_sub_ps(_data, _Vector._data));
+	}
+
+	Vector Vector::operator*(__m128 _Vector) const
+	{
+		return Vector(_mm_mul_ps(_data, _Vector));
+	}
+
+	Vector Vector::operator*(const Vector& _Vector) const
+	{
+		return Vector(_mm_mul_ps(_data, _Vector._data));
+	}
+
+	Vector Vector::operator/(__m128 _Vector) const
+	{
+		return Vector(_mm_div_ps(_data, _Vector));
+	}
+
+	Vector Vector::operator/(const Vector& _Vector) const
+	{
+		return Vector(_mm_div_ps(_data, _Vector._data));
+	}
+
 	float Vector::dot(__m128 _Vector) const
 	{
 		__declspec (align (128)) __m128 Calc = _mm_mul_ps(_data, _Vector);
@@ -128,18 +168,8 @@ namespace util
 
 	float Vector::cross(__m128 _Vector) const
 	{
-		//__declspec (align (128)) __m128 Temp0 = _mm_set_ps(_data.m128_f32[1], _data.m128_f32[2], _data.m128_f32[0], 0.f);
-		//__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_Vector.m128_f32[2], _Vector.m128_f32[0], _Vector.m128_f32[1], 0.f);
-		//__declspec (align (128)) __m128 Temp2 = _mm_set_ps(_data.m128_f32[2], _data.m128_f32[0], _data.m128_f32[1], 0.f);
-		//__declspec (align (128)) __m128 Temp3 = _mm_set_ps(_Vector.m128_f32[1], _Vector.m128_f32[0], _Vector.m128_f32[2], 0.f);
-
-		//__declspec (align (128)) __m128 Mul0 = _mm_mul_ps(Temp0, Temp1);
-		//__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(Temp2, Temp3);
-
-		//__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul0, Mul1);
-
-		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(_Vector.m128_f32[1], _Vector.m128_f32[2], _Vector.m128_f32[0], 0.f);
-		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_Vector.m128_f32[0], _Vector.m128_f32[2], _Vector.m128_f32[1], 0.f);
+		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(0.f, _Vector.m128_f32[0], _Vector.m128_f32[2], _Vector.m128_f32[1]);
+		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(0.f, _Vector.m128_f32[1], _Vector.m128_f32[2], _Vector.m128_f32[0]);
 		__declspec (align (128)) __m128 Mul0 = _mm_mul_ps(_data, Temp0);
 		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(_data, Temp1);
 		__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul0, Mul1);
@@ -149,13 +179,42 @@ namespace util
 
 	float Vector::cross(const Vector& _Vector) const
 	{
-		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(_Vector._data.m128_f32[1], _Vector._data.m128_f32[2], _Vector._data.m128_f32[0], 0.f);
-		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_Vector._data.m128_f32[0], _Vector._data.m128_f32[2], _Vector._data.m128_f32[1], 0.f);
+		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(0.f, _Vector._data.m128_f32[0], _Vector._data.m128_f32[2], _Vector._data.m128_f32[1]);
+		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(0.f, _Vector._data.m128_f32[1], _Vector._data.m128_f32[2], _Vector._data.m128_f32[0]);
 		__declspec (align (128)) __m128 Mul0 = _mm_mul_ps(_data, Temp0);
 		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(_data, Temp1);
 		__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul0, Mul1);
 
 		return Return.m128_f32[0] + Return.m128_f32[1] + Return.m128_f32[2];
+	}
+
+	float Vector::lengthSquared() const
+	{
+		__declspec (align (128)) __m128 Calc = _mm_mul_ps(_data, _data);
+		return Calc.m128_f32[0] + Calc.m128_f32[1] + Calc.m128_f32[2];
+	}
+
+	float Vector::length() const
+	{
+		return std::sqrt(lengthSquared());
+	}
+
+	void Vector::normalize() 
+	{
+		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(length(), length(), length(), length());
+		__declspec (align (128)) __m128 Result = _mm_div_ps(_data, Temp0);
+		_data = Result;
+	}
+
+	Vector Vector::normalized() const
+	{
+		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(length(), length(), length(), length());
+		return Vector(_mm_div_ps(_data, Temp0));
+	}
+
+	Vector Vector::projected(const Vector _normal) const
+	{
+		return Vector();
 	}
 
 }

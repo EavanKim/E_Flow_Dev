@@ -2,12 +2,11 @@
 
 int main()
 {
-	util::Vector test = {1.f, 0.f, 1.f, 0.f};
+	util::Vector test = {9.f, 8.f, 7.f, 6.f};
 
-	util::Vector* newvector = new util::Vector(test);
+	util::Vector newvector = test.normalized();
 
-	delete newvector;
-	newvector = nullptr;
+	float croosss = test.dot(newvector);
 
 	return 0;
 }

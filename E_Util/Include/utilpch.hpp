@@ -1,6 +1,8 @@
 #ifndef PCH_HPP__
 #define PCH_HPP__
 
+#include <math.h>
+#include <cmath>
 #include <vector>
 #include <functional>
 #include <thread>
