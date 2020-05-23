@@ -130,8 +130,8 @@ namespace util
 	{
 		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_data.m128_f32[1], _data.m128_f32[2], _data.m128_f32[0], 0.f);
 		__declspec (align (128)) __m128 Temp2 = _mm_set_ps(_Vector.m128_f32[2], _Vector.m128_f32[0], _Vector.m128_f32[1], 0.f);
-		__declspec (align (128)) __m128 Temp3 = _mm_set_ps(_data.m128_f32[0], _data.m128_f32[1], _data.m128_f32[2], 0.f);
-		__declspec (align (128)) __m128 Temp4 = _mm_set_ps(_Vector.m128_f32[0], _Vector.m128_f32[1], _Vector.m128_f32[2], 0.f);
+		__declspec (align (128)) __m128 Temp3 = _mm_set_ps(_data.m128_f32[2], _data.m128_f32[0], _data.m128_f32[1], 0.f);
+		__declspec (align (128)) __m128 Temp4 = _mm_set_ps(_Vector.m128_f32[1], _Vector.m128_f32[0], _Vector.m128_f32[2], 0.f);
 
 		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(Temp1, Temp2);
 		__declspec (align (128)) __m128 Mul2 = _mm_mul_ps(Temp3, Temp4);
@@ -145,8 +145,8 @@ namespace util
 	{
 		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_data.m128_f32[1], _data.m128_f32[2], _data.m128_f32[0], 0.f);
 		__declspec (align (128)) __m128 Temp2 = _mm_set_ps(_Vector._data.m128_f32[2], _Vector._data.m128_f32[0], _Vector._data.m128_f32[1], 0.f);
-		__declspec (align (128)) __m128 Temp3 = _mm_set_ps(_data.m128_f32[0], _data.m128_f32[1], _data.m128_f32[2], 0.f);
-		__declspec (align (128)) __m128 Temp4 = _mm_set_ps(_Vector._data.m128_f32[0], _Vector._data.m128_f32[1], _Vector._data.m128_f32[2], 0.f);
+		__declspec (align (128)) __m128 Temp3 = _mm_set_ps(_data.m128_f32[2], _data.m128_f32[0], _data.m128_f32[1], 0.f);
+		__declspec (align (128)) __m128 Temp4 = _mm_set_ps(_Vector._data.m128_f32[1], _Vector._data.m128_f32[0], _Vector._data.m128_f32[2], 0.f);
 
 		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(Temp1, Temp2);
 		__declspec (align (128)) __m128 Mul2 = _mm_mul_ps(Temp3, Temp4);
