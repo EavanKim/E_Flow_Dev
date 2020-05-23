@@ -30,8 +30,8 @@ namespace util
 		Vector div(const Vector& _Vector) const;
 		float dot(__m128 _Vector) const;
 		float dot(const Vector& _Vector) const;
-		float cross3(__m128 _Vector) const;
-		float cross3(const Vector& _Vector) const;
+		float cross(__m128 _Vector) const;
+		float cross(const Vector& _Vector) const;
 
 
 	private:

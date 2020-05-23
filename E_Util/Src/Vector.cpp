@@ -126,7 +126,7 @@ namespace util
 		return Calc.m128_f32[0] + Calc.m128_f32[1] + Calc.m128_f32[2] + Calc.m128_f32[3];
 	}
 
-	float Vector::cross3(__m128 _Vector) const
+	float Vector::cross(__m128 _Vector) const
 	{
 		//__declspec (align (128)) __m128 Temp0 = _mm_set_ps(_data.m128_f32[1], _data.m128_f32[2], _data.m128_f32[0], 0.f);
 		//__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_Vector.m128_f32[2], _Vector.m128_f32[0], _Vector.m128_f32[1], 0.f);
@@ -147,7 +147,7 @@ namespace util
 		return Return.m128_f32[0] + Return.m128_f32[1] + Return.m128_f32[2];
 	}
 
-	float Vector::cross3(const Vector& _Vector) const
+	float Vector::cross(const Vector& _Vector) const
 	{
 		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(_Vector._data.m128_f32[1], _Vector._data.m128_f32[2], _Vector._data.m128_f32[0], 0.f);
 		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(_Vector._data.m128_f32[0], _Vector._data.m128_f32[2], _Vector._data.m128_f32[1], 0.f);
