@@ -169,6 +169,7 @@
     <ClCompile Include="Src\Array.cpp" />
     <ClCompile Include="Src\Array2.cpp" />
     <ClCompile Include="Src\Array3.cpp" />
+    <ClCompile Include="Src\ArrayAccessor.cpp" />
     <ClCompile Include="Src\Vector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
