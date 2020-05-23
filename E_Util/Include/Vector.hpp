@@ -32,8 +32,6 @@ namespace util
 		float dot(const Vector& _Vector) const;
 		float cross3(__m128 _Vector) const;
 		float cross3(const Vector& _Vector) const;
-		float cross4(__m128 _Vector) const;
-		float cross4(const Vector& _Vector) const;
 
 
 	private:
