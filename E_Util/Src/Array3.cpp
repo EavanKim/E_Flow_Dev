@@ -1,6 +1,4 @@
-#include "Array3.hpp"
-#ifndef ARRAY3IMPL_HPP__
-#define ARRAY3IMPL_HPP__
+#include <utilpch.hpp>
 
 template<typename T>
 inline T& Array<T, 3>::operator()(size_t _XIndex, size_t _YIndex, size_t _ZIndex)
@@ -35,5 +33,3 @@ inline size_t Array<T, 3>::depth() const
 {
 	return size_t();
 }
-
-#endif

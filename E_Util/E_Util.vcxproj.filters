@@ -25,30 +25,24 @@
     <Filter Include="헤더 파일\Container\Accessor">
       <UniqueIdentifier>{1afe3c0d-c489-4fa5-974d-901d5ba79711}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Container">
+      <UniqueIdentifier>{f32d405d-8135-49f2-9dda-30d11eca5bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Container\Array">
+      <UniqueIdentifier>{d12bc67d-3c94-4067-a15c-ed6e0fac3c5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Define.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Include\pch.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Array.hpp">
-      <Filter>헤더 파일\Container\Array</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Array_Impl.hpp">
       <Filter>헤더 파일\Container\Array</Filter>
     </ClInclude>
     <ClInclude Include="Include\Array2.hpp">
       <Filter>헤더 파일\Container\Array</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Array2_Impl.hpp">
-      <Filter>헤더 파일\Container\Array</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Array3.hpp">
-      <Filter>헤더 파일\Container\Array</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Array3_Impl.hpp">
       <Filter>헤더 파일\Container\Array</Filter>
     </ClInclude>
     <ClInclude Include="Include\Vector.hpp">
@@ -66,10 +60,22 @@
     <ClInclude Include="Include\ArrayAccessor.hpp">
       <Filter>헤더 파일\Container\Accessor</Filter>
     </ClInclude>
+    <ClInclude Include="Include\utilpch.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Vector.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Array.cpp">
+      <Filter>소스 파일\Container\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Array2.cpp">
+      <Filter>소스 파일\Container\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Array3.cpp">
+      <Filter>소스 파일\Container\Array</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

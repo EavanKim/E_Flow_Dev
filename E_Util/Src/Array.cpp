@@ -1,5 +1,4 @@
-#ifndef ARRAYIMPL_HPP__
-#define ARRAYIMPL_HPP__
+#include <utilpch.hpp>
 
 template<typename T>
 inline Array<T, 1>::Array()
@@ -27,6 +26,3 @@ inline size_t Array<T, 1>::size() const
 {
 	return size_t();
 }
-
-
-#endif

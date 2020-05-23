@@ -21,6 +21,4 @@ private:
 
 template <typename T> using Array2 = Array<T, 2>;
 
-#include "Array2_Impl.hpp"
-
 #endif

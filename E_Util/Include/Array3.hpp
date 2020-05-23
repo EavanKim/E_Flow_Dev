@@ -25,6 +25,4 @@ private:
 
 template <typename T> using Array3 = Array<T, 3>;
 
-#include "Array3_Impl.hpp"
-
 #endif
