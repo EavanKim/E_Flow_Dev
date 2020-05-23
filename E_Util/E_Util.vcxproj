@@ -162,6 +162,9 @@
     <ClInclude Include="Include\Array_Impl.hpp" />
     <ClInclude Include="Include\Define.hpp" />
     <ClInclude Include="Include\pch.hpp" />
+    <ClInclude Include="Include\Size.hpp" />
+    <ClInclude Include="Include\Size2.hpp" />
+    <ClInclude Include="Include\Size3.hpp" />
     <ClInclude Include="Include\Vector.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

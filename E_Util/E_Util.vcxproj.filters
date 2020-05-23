@@ -51,5 +51,14 @@
     <ClInclude Include="Include\Vector.hpp">
       <Filter>헤더 파일\Vector</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Size.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Size2.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Size3.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
