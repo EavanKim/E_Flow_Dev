@@ -2,6 +2,9 @@
 #define PCH_HPP__
 
 #include <vector>
+#include <functional>
+#include <thread>
+#include <xmmintrin.h>
 
 #include "Define.hpp"
 
@@ -12,5 +15,9 @@
 #include "Array.hpp"
 #include "Array2.hpp"
 #include "Array3.hpp"
+
+#include "ArrayAccessor.hpp"
+
+#include "Vector.hpp"
 
 #endif

@@ -4,6 +4,7 @@
 template<typename T>
 inline Array<T, 1>::Array()
 {
+
 }
 
 template<typename T>

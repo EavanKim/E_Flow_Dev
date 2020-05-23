@@ -1,7 +1,7 @@
 #ifndef SIZE2_HPP__
 #define SIZE2_HPP__
 
-class Size2 
+class UTIL_EXPORTS Size2
 {
 
 };

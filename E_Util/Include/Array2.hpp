@@ -2,7 +2,7 @@
 #define ARRAY2_HPP__
 
 template<typename T>
-class Array<T, 2> final
+class UTIL_EXPORTS Array<T, 2> final
 {
 public:
 	Array();

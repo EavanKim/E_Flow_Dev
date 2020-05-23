@@ -19,4 +19,10 @@
 
 #define SPEEDOFSOUNDINWATER = 1482.f;
 
+#ifdef UTIL_EXPORTS
+#define UTIL_EXPORTS __declspec(dllexport)
+#else
+#define UTIL_EXPORTS __declspec(dllimport)
+#endif
+
 #endif

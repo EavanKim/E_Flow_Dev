@@ -22,6 +22,9 @@
     <Filter Include="헤더 파일\Vector">
       <UniqueIdentifier>{75f017ae-ad18-4d42-ba73-b611f1d0a8bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Container\Accessor">
+      <UniqueIdentifier>{1afe3c0d-c489-4fa5-974d-901d5ba79711}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Define.hpp">
@@ -60,5 +63,13 @@
     <ClInclude Include="Include\Size3.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Include\ArrayAccessor.hpp">
+      <Filter>헤더 파일\Container\Accessor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Vector.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
