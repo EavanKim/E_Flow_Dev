@@ -2,9 +2,9 @@
 
 int main()
 {
-	Vector3F test = {1.f, 0.f, 1.f, 0.f};
+	util::Vector test = {1.f, 0.f, 1.f, 0.f};
 
-	Vector3F* newvector = new Vector3F(test);
+	util::Vector* newvector = new util::Vector(test);
 
 	delete newvector;
 	newvector = nullptr;
