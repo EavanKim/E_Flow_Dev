@@ -51,12 +51,24 @@
     <ClInclude Include="Include\Field3.hpp">
       <Filter>헤더 파일\Field3</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Serializable.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\FlatBuffer.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Vector.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Src\Field3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Serializable.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\FlatBuffer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
