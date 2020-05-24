@@ -34,6 +34,9 @@
     <Filter Include="소스 파일\Container\Accessor">
       <UniqueIdentifier>{bf01cc02-08b9-4563-8d04-d4954a7581e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Field3">
+      <UniqueIdentifier>{1226a0f8-d58a-48c5-8f55-f3e060dcbac7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Define.hpp">
@@ -45,9 +48,15 @@
     <ClInclude Include="Include\utilpch.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Field3.hpp">
+      <Filter>헤더 파일\Field3</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Vector.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Field3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

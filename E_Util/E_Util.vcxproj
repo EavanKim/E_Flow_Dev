@@ -155,10 +155,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Include\Define.hpp" />
+    <ClInclude Include="Include\Field3.hpp" />
     <ClInclude Include="Include\utilpch.hpp" />
     <ClInclude Include="Include\Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Field3.cpp" />
     <ClCompile Include="Src\Vector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

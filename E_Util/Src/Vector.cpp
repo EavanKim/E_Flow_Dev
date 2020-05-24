@@ -25,6 +25,26 @@ namespace util
 
 	}
 
+	float Vector::x()
+	{
+		return _data.m128_f32[0];
+	}
+
+	float Vector::y()
+	{
+		return _data.m128_f32[1];
+	}
+
+	float Vector::z()
+	{
+		return _data.m128_f32[2];
+	}
+
+	float Vector::a()
+	{
+		return _data.m128_f32[3];
+	}
+
 	void Vector::set(const std::initializer_list<float>& _lst)
 	{
 		int Index = 0;
@@ -154,6 +174,28 @@ namespace util
 		return Vector(_mm_div_ps(_data, _Vector._data));
 	}
 
+	Vector Vector::operator+(float _val) const
+	{
+		return Vector(add(_mm_set_ps(_val, _val, _val, _val)));
+	}
+
+	Vector Vector::operator-(float _val) const
+	{
+		return Vector(sub(_mm_set_ps(_val, _val, _val, _val)));
+	}
+
+	Vector Vector::operator*(float _val) const
+	{
+		return Vector(mul(_mm_set_ps(_val, _val, _val, _val)));
+	}
+
+	Vector Vector::operator/(float _val) const
+	{
+		if (!_val)
+			return Vector();
+		return Vector(div(_mm_set_ps(_val, _val, _val, _val)));
+	}
+
 	float Vector::dot(__m128 _Vector) const
 	{
 		__declspec (align (128)) __m128 Calc = _mm_mul_ps(_data, _Vector);
@@ -166,7 +208,7 @@ namespace util
 		return Calc.m128_f32[0] + Calc.m128_f32[1] + Calc.m128_f32[2] + Calc.m128_f32[3];
 	}
 
-	float Vector::cross(__m128 _Vector) const
+	Vector Vector::cross(__m128 _Vector) const
 	{
 		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(0.f, _Vector.m128_f32[0], _Vector.m128_f32[2], _Vector.m128_f32[1]);
 		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(0.f, _Vector.m128_f32[1], _Vector.m128_f32[2], _Vector.m128_f32[0]);
@@ -174,10 +216,10 @@ namespace util
 		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(_data, Temp1);
 		__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul0, Mul1);
 
-		return Return.m128_f32[0] + Return.m128_f32[1] + Return.m128_f32[2];
+		return _mm_sub_ps(Mul0, Mul1);
 	}
 
-	float Vector::cross(const Vector& _Vector) const
+	Vector Vector::cross(const Vector& _Vector) const
 	{
 		__declspec (align (128)) __m128 Temp0 = _mm_set_ps(0.f, _Vector._data.m128_f32[0], _Vector._data.m128_f32[2], _Vector._data.m128_f32[1]);
 		__declspec (align (128)) __m128 Temp1 = _mm_set_ps(0.f, _Vector._data.m128_f32[1], _Vector._data.m128_f32[2], _Vector._data.m128_f32[0]);
@@ -185,7 +227,7 @@ namespace util
 		__declspec (align (128)) __m128 Mul1 = _mm_mul_ps(_data, Temp1);
 		__declspec (align (128)) __m128 Return = _mm_sub_ps(Mul0, Mul1);
 
-		return Return.m128_f32[0] + Return.m128_f32[1] + Return.m128_f32[2];
+		return _mm_sub_ps(Mul0, Mul1);
 	}
 
 	float Vector::lengthSquared() const
@@ -212,9 +254,21 @@ namespace util
 		return Vector(_mm_div_ps(_data, Temp0));
 	}
 
-	Vector Vector::projected(const Vector _normal) const
+	Vector Vector::projected(const Vector& _normal) const
 	{
-		return Vector();
+		return sub(_normal * dot(_normal));
+	}
+
+	Vector Vector::reflected(const Vector& _normal) const
+	{
+		return sub(_normal * (2 * dot(_normal)));
+	}
+
+	std::tuple<Vector, Vector> Vector::tangential() const
+	{
+		Vector a = (((std::fabsf(_data.m128_f32[1]) > 0) || (std::fabsf(_data.m128_f32[2]) > 0)) ? Vector(1, 0, 0, 0) : Vector(0, 1, 0, 0)).cross(*this).normalized();
+		Vector b = cross(a);
+		return std::tuple<Vector, Vector>(a, b);
 	}
 
 }
