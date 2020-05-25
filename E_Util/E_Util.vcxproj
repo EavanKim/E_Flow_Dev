@@ -154,14 +154,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Array.hpp" />
+    <ClInclude Include="Include\ArrayAccessor.hpp" />
     <ClInclude Include="Include\Define.hpp" />
     <ClInclude Include="Include\Field3.hpp" />
     <ClInclude Include="Include\FlatBuffer.hpp" />
     <ClInclude Include="Include\Serializable.hpp" />
+    <ClInclude Include="Include\Size.hpp" />
+    <ClInclude Include="Include\Size2.hpp" />
+    <ClInclude Include="Include\Size3.hpp" />
     <ClInclude Include="Include\utilpch.hpp" />
     <ClInclude Include="Include\Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Array.cpp" />
+    <ClCompile Include="Src\ArrayAccessor.cpp" />
     <ClCompile Include="Src\Field3.cpp" />
     <ClCompile Include="Src\FlatBuffer.cpp" />
     <ClCompile Include="Src\Serializable.cpp" />

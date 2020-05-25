@@ -34,7 +34,13 @@
     <Filter Include="소스 파일\Container\Accessor">
       <UniqueIdentifier>{bf01cc02-08b9-4563-8d04-d4954a7581e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\Field3">
+    <Filter Include="소스 파일\Vector">
+      <UniqueIdentifier>{2d4ec173-1b70-4d5e-969f-625aaab45d69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Field">
+      <UniqueIdentifier>{f946d675-a357-4479-ae03-bb228b3224b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Field">
       <UniqueIdentifier>{1226a0f8-d58a-48c5-8f55-f3e060dcbac7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -49,27 +55,48 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Include\Field3.hpp">
-      <Filter>헤더 파일\Field3</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Serializable.hpp">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Field</Filter>
     </ClInclude>
     <ClInclude Include="Include\FlatBuffer.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Array.hpp">
+      <Filter>헤더 파일\Container\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Serializable.hpp">
+      <Filter>헤더 파일\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ArrayAccessor.hpp">
+      <Filter>헤더 파일\Container\Accessor</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Size.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Size2.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Size3.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Vector.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Field3.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Serializable.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Src\FlatBuffer.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Vector.cpp">
+      <Filter>소스 파일\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Field3.cpp">
+      <Filter>소스 파일\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Array.cpp">
+      <Filter>소스 파일\Container\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Serializable.cpp">
+      <Filter>소스 파일\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ArrayAccessor.cpp">
+      <Filter>소스 파일\Container\Accessor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

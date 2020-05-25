@@ -270,5 +270,4 @@ namespace util
 		Vector b = cross(a);
 		return std::tuple<Vector, Vector>(a, b);
 	}
-
 }

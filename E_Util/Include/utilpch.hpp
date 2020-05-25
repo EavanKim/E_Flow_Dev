@@ -10,8 +10,15 @@
 #include <xmmintrin.h>
 
 #include "Define.hpp"
+#include "Size.hpp"
+#include "Size2.hpp"
+#include "Size3.hpp"
 
 #include "Vector.hpp"
+
+#include "ArrayAccessor.hpp"
+
+#include "Array.hpp"
 
 #include "FlatBuffer.hpp"
 #include "Serializable.hpp"
