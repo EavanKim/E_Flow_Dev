@@ -15,6 +15,7 @@
 #include "Size3.hpp"
 
 #include "Vector.hpp"
+#include "Matrix.hpp"
 
 #include "ArrayAccessor.hpp"
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -154,11 +154,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Array.hpp" />
-    <ClInclude Include="Include\ArrayAccessor.hpp" />
     <ClInclude Include="Include\Define.hpp" />
     <ClInclude Include="Include\Field3.hpp" />
     <ClInclude Include="Include\FlatBuffer.hpp" />
+    <ClInclude Include="Include\Matrix.hpp" />
     <ClInclude Include="Include\Serializable.hpp" />
     <ClInclude Include="Include\Size.hpp" />
     <ClInclude Include="Include\Size2.hpp" />
@@ -167,8 +166,6 @@
     <ClInclude Include="Include\Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Array.cpp" />
-    <ClCompile Include="Src\ArrayAccessor.cpp" />
     <ClCompile Include="Src\Field3.cpp" />
     <ClCompile Include="Src\FlatBuffer.cpp" />
     <ClCompile Include="Src\Serializable.cpp" />
