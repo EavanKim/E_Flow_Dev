@@ -29,17 +29,17 @@ util::Derivative util::ScalarField3::GetAllDerivative()
 	float Cos_Y = cosf(m_Vector.y());
 	float Cos_Z = cosf(m_Vector.z());
 
-	__m128 Mem0 = _mm_set_ps(Sin_X, Cos_X, Sin_X, Sin_X);
-	__m128 Mem1 = _mm_set_ps(Sin_Y, Sin_Y, Cos_Y, Sin_Y);
-	__m128 Mem2 = _mm_set_ps(Sin_Z, Cos_Z, Sin_Z, Cos_Z);
+	__m128 Mem0 = _mm_set_ps(Sin_X, Sin_X, Cos_X, Sin_X);
+	__m128 Mem1 = _mm_set_ps(Sin_Y, Cos_Y, Sin_Y, Sin_Y);
+	__m128 Mem2 = _mm_set_ps(Cos_Z, Sin_Z, Sin_Z, Sin_Z);
 
 	__m128 CalcMiddle = _mm_mul_ps(Mem0, Mem1);
 	__m128 Result = _mm_mul_ps(CalcMiddle, Mem2);
 
 	Derivative Returnvalue;
 
-	Returnvalue.Derivative = Result.m128_f32[3];
-	Returnvalue.Gradient = _mm_set_ps(Result.m128_f32[2], Result.m128_f32[1], Result.m128_f32[0], 0.f);
+	Returnvalue.Derivative = Result.m128_f32[0];
+	Returnvalue.Gradient = _mm_set_ps(0.f, Result.m128_f32[3], Result.m128_f32[2], Result.m128_f32[1]);
 
 	return Returnvalue;
 }
