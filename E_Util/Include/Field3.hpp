@@ -31,7 +31,7 @@ namespace util
 		virtual double sample(const Vector& _x) const = 0;
 
 		Derivative GetAllDerivative();
-		Derivative PartialDerivative(AXIS _Axis);
+		float PartialDerivative(AXIS _Axis);
 
 		Vector m_Vector;
 	};

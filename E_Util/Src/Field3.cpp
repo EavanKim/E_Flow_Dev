@@ -44,9 +44,34 @@ util::Derivative util::ScalarField3::GetAllDerivative()
 	return Returnvalue;
 }
 
-util::Derivative util::ScalarField3::PartialDerivative(AXIS _Axis)
+float util::ScalarField3::PartialDerivative(AXIS _Axis)
 {
-	return Derivative();
+	float sin0;
+	float sin1;
+	float cos0;
+
+	switch (_Axis)
+	{
+	case AXIS::X:
+		cos0 = cosf(m_Vector.x());
+		sin0 = sinf(m_Vector.y());
+		sin1 = sinf(m_Vector.z());
+		break;
+	case AXIS::Y:
+		sin0 = sinf(m_Vector.x());
+		cos0 = cosf(m_Vector.y());
+		sin1 = sinf(m_Vector.z());
+		break;
+	case AXIS::Z:
+		sin0 = sinf(m_Vector.x());
+		sin1 = sinf(m_Vector.y());
+		cos0 = cosf(m_Vector.z());
+		break;
+	default:
+		return 0.f;
+	}
+
+	return sin0 * sin1 * cos0;
 }
 
 util::VectorField3::VectorField3()
