@@ -8,5 +8,21 @@ int main()
 
 	float croosss = test.dot(newvector);
 
+	float checkfunction0 = util::E_Math::old_bilerp(90.f, 100.f, 90.f, 100.f, 0.5f, 0.7f);
+	float checkfunction1 = util::E_Math::bilerp(90.f, 100.f, 90.f, 100.f, 0.5f, 0.7f);
+
+	if (checkfunction0 != checkfunction1)
+	{
+		int i = 0;
+	}
+
+	float checkfunction2 = util::E_Math::old_trilerp(90.f, 100.f, 90.f, 100.f, 90.f, 100.f, 90.f, 100.f, 0.5f, 0.7f, 0.8f);
+	float checkfunction3 = util::E_Math::trilerp(90.f, 100.f, 90.f, 100.f, 90.f, 100.f, 90.f, 100.f, 0.5f, 0.7f, 0.8f);
+
+	if (checkfunction2 != checkfunction3)
+	{
+		int i = 0;
+	}
+
 	return 0;
 }
