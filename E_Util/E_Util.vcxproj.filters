@@ -78,6 +78,9 @@
     <ClInclude Include="Include\Matrix.hpp">
       <Filter>헤더 파일\Matrix</Filter>
     </ClInclude>
+    <ClInclude Include="Include\EMath.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\FlatBuffer.cpp">

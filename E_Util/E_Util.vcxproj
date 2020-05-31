@@ -157,6 +157,7 @@
     <ClInclude Include="Include\Define.hpp" />
     <ClInclude Include="Include\Field3.hpp" />
     <ClInclude Include="Include\FlatBuffer.hpp" />
+    <ClInclude Include="Include\EMath.hpp" />
     <ClInclude Include="Include\Matrix.hpp" />
     <ClInclude Include="Include\Serializable.hpp" />
     <ClInclude Include="Include\Size.hpp" />

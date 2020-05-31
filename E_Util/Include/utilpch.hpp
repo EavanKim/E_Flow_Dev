@@ -10,6 +10,9 @@
 #include <xmmintrin.h>
 
 #include "Define.hpp"
+
+#include "EMath.hpp"
+
 #include "Size.hpp"
 #include "Size2.hpp"
 #include "Size3.hpp"
@@ -25,6 +28,7 @@
 #include "Serializable.hpp"
 
 #include "Field3.hpp"
+
 
 
 #endif
