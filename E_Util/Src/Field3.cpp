@@ -25,7 +25,7 @@ float util::ScalarField3::sample(const Vector& _v) const
 	return sinf(_v.x()) * sinf(_v.y()) * sinf(_v.z());
 }
 
-util::Derivative util::ScalarField3::GetAllDerivative(Vector _vector)
+util::Derivative util::ScalarField3::GetAllDerivative(Vector& _vector)
 {
 	float Sin_X = sinf(_vector.x());
 	float Sin_Y = sinf(_vector.y());
@@ -49,7 +49,7 @@ util::Derivative util::ScalarField3::GetAllDerivative(Vector _vector)
 	return Returnvalue;
 }
 
-float util::ScalarField3::PartialDerivative(AXIS _Axis, Vector _vector)
+float util::ScalarField3::PartialDerivative(AXIS _Axis, Vector& _vector)
 {
 	float sin0;
 	float sin1;
@@ -94,7 +94,7 @@ util::Vector util::VectorField3::sample(const Vector& _vector) const
 	return Vector();
 }
 
-float util::VectorField3::divergence(const Vector _vector) const
+float util::VectorField3::divergence(const Vector& _vector) const
 {
 	float Sin_X = sinf(_vector.x());
 	float Sin_Y = sinf(_vector.y());
@@ -104,8 +104,23 @@ float util::VectorField3::divergence(const Vector _vector) const
 	float Cos_Z = cosf(_vector.z());
 
 	__m128 Mem0 = _mm_set_ps(0.f, Sin_Z, Sin_Y, Sin_X);
-	__m128 Mem1 = _mm_set_ps(0.f, Cos_Z, Cos_Y, Cos_X);
+	__m128 Mem1 = _mm_set_ps(0.f, Cos_X, Cos_Z, Cos_Y);
 	__m128 Result = _mm_mul_ps(Mem0, Mem1);
 
 	return Result.m128_f32[0] + Result.m128_f32[1] + Result.m128_f32[2] + Result.m128_f32[3];
+}
+
+util::Vector util::VectorField3::curl(const Vector& _vector) const
+{
+	float Sin_X = sinf(_vector.x());
+	float Sin_Y = sinf(_vector.y());
+	float Sin_Z = sinf(_vector.z());
+	float Cos_X = cosf(_vector.x());
+	float Cos_Y = cosf(_vector.y());
+	float Cos_Z = cosf(_vector.z());
+
+	__m128 Mem0 = _mm_set_ps(0.f, -Sin_X, -Sin_Z, -Sin_Y);
+	__m128 Mem1 = _mm_set_ps(0.f, Cos_Y, Cos_X, Cos_Z);
+
+	return Vector(_mm_mul_ps(Mem0, Mem1));
 }
