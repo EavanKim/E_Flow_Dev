@@ -11,10 +11,10 @@ namespace util
 		Vector(float _x, float _y, float _z, float _a);
 		Vector(const Vector& other);
 
-		float x();
-		float y();
-		float z();
-		float a();
+		float x() const;
+		float y() const;
+		float z() const;
+		float a() const;
 
 		void set(const std::initializer_list<float>& _lst);
 		void set(const Vector& _other);

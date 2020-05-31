@@ -28,10 +28,10 @@ namespace util
 
 		virtual ~ScalarField3();
 
-		virtual double sample(const Vector& _x) const = 0;
+		virtual float sample(const Vector& _v) const = 0;
 
-		Derivative GetAllDerivative();
-		float PartialDerivative(AXIS _Axis);
+		Derivative GetAllDerivative(Vector _vector);
+		float PartialDerivative(AXIS _Axis, Vector _vector);
 
 		Vector m_Vector;
 	};
@@ -43,8 +43,9 @@ namespace util
 
 		virtual ~VectorField3();
 
-		virtual Vector sample(const Vector& _x) const = 0;
+		virtual Vector sample(const Vector& _v) const = 0;
 
+		virtual float divergence(const Vector _vector) const = 0;
 	};
 }
 #endif // !FIELD3_HPP__

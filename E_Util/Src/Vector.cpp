@@ -25,22 +25,22 @@ namespace util
 
 	}
 
-	float Vector::x()
+	float Vector::x() const
 	{
 		return _data.m128_f32[0];
 	}
 
-	float Vector::y()
+	float Vector::y() const
 	{
 		return _data.m128_f32[1];
 	}
 
-	float Vector::z()
+	float Vector::z() const
 	{
 		return _data.m128_f32[2];
 	}
 
-	float Vector::a()
+	float Vector::a() const
 	{
 		return _data.m128_f32[3];
 	}
