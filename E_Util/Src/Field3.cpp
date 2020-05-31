@@ -79,6 +79,22 @@ float util::ScalarField3::PartialDerivative(AXIS _Axis, Vector& _vector)
 	return sin0 * sin1 * cos0;
 }
 
+float util::ScalarField3::laplacian(const Vector& _vector) const
+{
+	float Sin_X = sinf(_vector.x());
+	float Sin_Y = sinf(_vector.y());
+	float Sin_Z = sinf(_vector.z());
+
+	__m128 mem0 = _mm_set_ps(0.f, Sin_Z, Sin_Y, -Sin_X);
+	__m128 mem1 = _mm_set_ps(0.f, Sin_Z, Sin_Y, -Sin_X);
+	__m128 mem2 = _mm_set_ps(0.f, Sin_Z, Sin_Y, -Sin_X);
+
+	__m128 Middle = _mm_mul_ps(mem0, mem1);
+	__m128 Result = _mm_mul_ps(Middle, mem2);
+
+	return Result.m128_f32[0] + Result.m128_f32[1] + Result.m128_f32[2] + Result.m128_f32[3];
+}
+
 util::VectorField3::VectorField3()
 {
 

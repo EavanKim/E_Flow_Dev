@@ -33,7 +33,7 @@ namespace util
 		Derivative GetAllDerivative(Vector& _vector);
 		float PartialDerivative(AXIS _Axis, Vector& _vector);
 
-		Vector m_Vector;
+		virtual float laplacian(const Vector& _vector) const = 0;
 	};
 
 	class UTIL_EXPORTS VectorField3 : public Field3
@@ -49,7 +49,6 @@ namespace util
 
 		virtual Vector curl(const Vector& _vector) const = 0;
 
-		virtual Vector laplacian(const Vector& _vector) const = 0;
 	};
 }
 #endif // !FIELD3_HPP__
