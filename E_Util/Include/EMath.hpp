@@ -11,6 +11,11 @@ namespace util
 			return (1 - _Time) * _Point0 + _Time * _Point1;
 		}
 
+		static Vector lerp(const Vector& _Point0, const Vector& _Point1, float _Time)
+		{
+			return  (_Point0 * (1 - _Time)) + (_Point1 * _Time);
+		}
+
 		static float bilerp(const float& _x0, const float& _x1, const float& _y0, const float& _y1, float _time)
 		{
 			float _time0 = 1 - _time;

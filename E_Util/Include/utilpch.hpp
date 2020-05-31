@@ -11,7 +11,6 @@
 
 #include "Define.hpp"
 
-#include "EMath.hpp"
 
 #include "Size.hpp"
 #include "Size2.hpp"
@@ -19,6 +18,7 @@
 
 #include "Vector.hpp"
 #include "Matrix.hpp"
+#include "EMath.hpp"
 
 #include "ArrayAccessor.hpp"
 
