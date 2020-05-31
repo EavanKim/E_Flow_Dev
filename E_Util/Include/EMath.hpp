@@ -71,7 +71,7 @@ namespace util
 
 			__m128 midmem1 = _mm_set_ps(0.f, 0.f, midresult.m128_f32[3], midresult.m128_f32[1]);
 
-			__m128 Middle3 = _mm_mul_ps(mem1, memT1);
+			__m128 Middle3 = _mm_mul_ps(midmem1, memT1);
 
 			__m128 result = _mm_add_ps(Middle2, Middle3);
 
@@ -98,7 +98,7 @@ namespace util
 			__m128 midmem1 = _mm_set_ps(0.f, 0.f, midresult.m128_f32[3], midresult.m128_f32[1]);
 
 			__m128 Middle2 = _mm_mul_ps(midmem0, memT2);
-			__m128 Middle3 = _mm_mul_ps(mem1, memT3);
+			__m128 Middle3 = _mm_mul_ps(midmem1, memT3);
 			__m128 result = _mm_add_ps(Middle2, Middle3);
 
 			return lerp(result.m128_f32[0], result.m128_f32[1], _time2);
