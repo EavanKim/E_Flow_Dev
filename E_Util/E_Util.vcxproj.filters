@@ -81,6 +81,15 @@
     <ClInclude Include="Include\EMath.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Plain.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\BoundingBox.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sphere.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\FlatBuffer.cpp">
@@ -94,6 +103,15 @@
     </ClCompile>
     <ClCompile Include="Src\Serializable.cpp">
       <Filter>소스 파일\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Plain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\BoundingBox.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\Sphere.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -18,6 +18,9 @@
 
 #include "Vector.hpp"
 #include "Matrix.hpp"
+#include "BoundingBox.hpp"
+#include "Plain.hpp"
+#include "Sphere.hpp"
 #include "EMath.hpp"
 
 #include "ArrayAccessor.hpp"

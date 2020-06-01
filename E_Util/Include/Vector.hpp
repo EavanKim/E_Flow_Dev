@@ -61,6 +61,9 @@ namespace util
 		Vector projected(const Vector& normal) const;
 		Vector reflected(const Vector& noraml) const;
 
+		bool isSimiler(const Vector& _other) const;
+		float distanceTo(const Vector& _other) const;
+
 		std::tuple<Vector, Vector> tangential() const;
 
 	private:

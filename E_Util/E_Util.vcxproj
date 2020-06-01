@@ -154,21 +154,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\BoundingBox.hpp" />
     <ClInclude Include="Include\Define.hpp" />
     <ClInclude Include="Include\Field3.hpp" />
     <ClInclude Include="Include\FlatBuffer.hpp" />
     <ClInclude Include="Include\EMath.hpp" />
     <ClInclude Include="Include\Matrix.hpp" />
+    <ClInclude Include="Include\Plain.hpp" />
     <ClInclude Include="Include\Serializable.hpp" />
     <ClInclude Include="Include\Size.hpp" />
     <ClInclude Include="Include\Size2.hpp" />
     <ClInclude Include="Include\Size3.hpp" />
+    <ClInclude Include="Include\Sphere.hpp" />
     <ClInclude Include="Include\utilpch.hpp" />
     <ClInclude Include="Include\Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Include\Sphere.cpp" />
+    <ClCompile Include="Src\BoundingBox.cpp" />
     <ClCompile Include="Src\Field3.cpp" />
     <ClCompile Include="Src\FlatBuffer.cpp" />
+    <ClCompile Include="Src\Plain.cpp" />
     <ClCompile Include="Src\Serializable.cpp" />
     <ClCompile Include="Src\Vector.cpp" />
   </ItemGroup>

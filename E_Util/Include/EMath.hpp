@@ -54,6 +54,11 @@ namespace util
 			return lerp(result.m128_f32[0], result.m128_f32[1], _time1);
 		}
 
+		static Vector bilerp(const Vector& _x0, const Vector& _x1, const Vector& _y0, const Vector& _y1, float _time0, float _time1)
+		{
+			return lerp(lerp(_x0, _x1, _time0), lerp(_y0, _y1, _time0), _time1);
+		}
+
 		static float old_bilerp(const float& _x0, const float& _x1, const float& _y0, const float& _y1, float _time0, float _time1)
 		{
 			return lerp(lerp(_x0, _x1, _time0), lerp(_y0, _y1, _time0), _time1);
@@ -111,11 +116,56 @@ namespace util
 
 			return lerp(result.m128_f32[0], result.m128_f32[1], _time2);
 		}
+		
+		static Vector trilerp(const Vector& _x00, const Vector& _x01, const Vector& _y00, const Vector& _y01, const Vector& _x10, const Vector& _x11, const Vector& _y10, const Vector& _y11, float _time0, float _time1, float _time2)
+		{
+			return lerp(bilerp(_x00, _x01, _y00, _y01, _time0, _time1), bilerp(_x10, _x11, _y10, _y11, _time0, _time1), _time2);
+		}
 
 		static float old_trilerp(const float& _x00, const float& _x01, const float& _y00, const float& _y01, const float& _x10, const float& _x11, const float& _y10, const float& _y11, float _time0, float _time1, float _time2)
 		{
 			return lerp(old_bilerp(_x00, _x01, _y00, _y01, _time0, _time1), old_bilerp(_x10, _x11, _y10, _y11, _time0, _time1), _time2);
 		}
+
+		static float catmullRomSpline(const float& _f0, const float& _f1, const float& _f2, const float& _f3, float _Time)
+		{
+			float d0 = (_f2 - _f0) / 2.f;
+			float d1 = (_f3 - _f1) / 2.f;
+			float D0 = _f2 - _f1;
+
+			float a3 = d0 + d1 - 2 * D0;
+			float a2 = 3 * D0 - 2 * d0 - d1;
+			float a1 = d0;
+			float a0 = _f1;
+
+			return a3 * cubic(_Time) + a2 * square(_Time) + a1 * _Time + a0;
+		}
+
+		static Vector catmullRomSpline(const Vector& _f0, const Vector& _f1, const Vector& _f2, const Vector& _f3, float _Time)
+		{
+			Vector d0 = (_f2 - _f0) / 2.f;
+			Vector d1 = (_f3 - _f1) / 2.f;
+			Vector D0 = _f2 - _f1;
+
+			Vector a3 = d0 + d1 - (D0 * 2);
+			Vector a2 = (D0 * 3) - (d0 * 2) - d1;
+			Vector a1 = d0;
+			Vector a0 = _f1;
+
+			return (a3 * cubic(_Time)) + (a2 * square(_Time)) + (a1 * _Time) + a0;
+		}
+
+		static float cubic(float _f)
+		{
+			return _f * _f * _f;
+		}
+
+		static float square(float _f)
+		{
+			return _f * _f;
+		}
+
+
 	};
 }
 

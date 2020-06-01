@@ -264,6 +264,16 @@ namespace util
 		return sub(_normal * (2 * dot(_normal)));
 	}
 
+	bool Vector::isSimiler(const Vector& _other) const
+	{
+		return false;
+	}
+
+	float Vector::distanceTo(const Vector& _other) const
+	{
+		return sub(_other).length();
+	}
+
 	std::tuple<Vector, Vector> Vector::tangential() const
 	{
 		Vector a = (((std::fabsf(_data.m128_f32[1]) > 0) || (std::fabsf(_data.m128_f32[2]) > 0)) ? Vector(1, 0, 0, 0) : Vector(0, 1, 0, 0)).cross(*this).normalized();

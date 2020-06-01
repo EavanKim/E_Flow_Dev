@@ -8,25 +8,16 @@ int main()
 
 	float croosss = test.dot(newvector);
 
-	float checkfunction0 = util::E_Math::old_bilerp(90.f, 100.f, 90.f, 100.f, 0.5f, 0.5f);
-	float checkfunction1 = util::E_Math::bilerp(90.f, 100.f, 90.f, 100.f, 0.5f, 0.5f);
 
-	if (checkfunction0 != checkfunction1)
-	{
-		int i = 0;
-	}
-
-	float checkfunction2 = util::E_Math::old_trilerp(90.f, 100.f, 90.f, 100.f, 90.f, 100.f, 90.f, 100.f, 0.5f, 0.5f, 0.5f);
-	float checkfunction3 = util::E_Math::trilerp(90.f, 100.f, 90.f, 100.f, 90.f, 100.f, 90.f, 100.f, 0.5f, 0.5f, 0.5f);
-
-	if (checkfunction2 != checkfunction3)
-	{
-		int i = 0;
-	}
-
-	util::Vector T0 = {90.f, 90.f, 90.f, 90.f};
-	util::Vector T1 = {100.f, 100.f, 100.f, 100.f};
+	util::Vector T0 = { 90.f, 90.f, 90.f, 90.f };
+	util::Vector T1 = { 100.f, 100.f, 100.f, 100.f };
 	util::Vector R0 = util::E_Math::lerp(T0, T1, 0.5);
+
+	util::Vector checkfunction0 = util::E_Math::bilerp(util::Vector(90, 80, 70, 0), util::Vector(100, 90, 80, 0), util::Vector(90, 80, 70, 0), util::Vector(100, 90, 80, 0), 0.5f, 0.5f);
+	util::Vector checkfunction3 = util::E_Math::trilerp(util::Vector(90, 80, 70, 0), util::Vector(100, 90, 80, 0), util::Vector(90, 80, 70, 0), util::Vector(100, 90, 80, 0),
+														util::Vector(90, 80, 70, 0), util::Vector(100, 90, 80, 0), util::Vector(90, 80, 70, 0), util::Vector(100, 90, 80, 0),
+														0.5f, 0.5f, 0.5f);
+
 
 	return 0;
 }
