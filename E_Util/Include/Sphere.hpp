@@ -13,6 +13,8 @@ namespace util
 
 		void getClosestIntersection(const Ray& _ray, SurfaceRayIntersection3* _Intersection) const override;
 
+		BoundingBox boundingBox() const override;
+
 	private:
 		Vector center;
 		float radius = 1.f;

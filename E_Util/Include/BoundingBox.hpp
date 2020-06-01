@@ -5,7 +5,13 @@ namespace util
 {
 	class BoundingBox
 	{
+	public:
+		BoundingBox(Vector _lefttop, Vector _rightbottom);
 
+
+
+		Vector LeftTop = { 0.f, 0.f, 0.f, 0.f };
+		Vector RightBottom = { 0.f, 0.f, 0.f, 0.f };
 	};
 }
 

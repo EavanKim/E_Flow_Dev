@@ -8,6 +8,7 @@
 #include <functional>
 #include <thread>
 #include <xmmintrin.h>
+#include <array>
 
 #include "Define.hpp"
 
@@ -21,11 +22,8 @@
 #include "BoundingBox.hpp"
 #include "Plain.hpp"
 #include "Sphere.hpp"
+#include "Polygon.hpp"
 #include "EMath.hpp"
-
-#include "ArrayAccessor.hpp"
-
-#include "Array.hpp"
 
 #include "FlatBuffer.hpp"
 #include "Serializable.hpp"

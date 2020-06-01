@@ -31,7 +31,7 @@ namespace util
 
 		virtual bool intersects(const Ray& _ray) const;
 
-		virtual double closestDistance(const Vector& _otherPoint) const;
+		virtual float closestDistance(const Vector& _otherPoint) const;
 	};
 }
 

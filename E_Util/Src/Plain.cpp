@@ -20,7 +20,7 @@ util::Vector util::Plain::closestNormal(const Vector& _otherPoint) const
 
 util::BoundingBox util::Plain::boundingBox() const
 {
-	return BoundingBox();
+	return BoundingBox(Vector(), Vector());
 }
 
 void util::Plain::getClosestIntersection(const Ray& _ray, SurfaceRayIntersection3* _intersection) const
@@ -35,7 +35,7 @@ bool util::Plain::intersects(const Ray& _ray) const
 	return Intersect.isIntersecting;
 }
 
-double util::Plain::closestDistance(const Vector& _otherPoint) const
+float util::Plain::closestDistance(const Vector& _otherPoint) const
 {
 	return _otherPoint.distanceTo(closestPoint(_otherPoint));
 }

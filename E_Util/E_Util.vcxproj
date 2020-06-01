@@ -161,6 +161,7 @@
     <ClInclude Include="Include\EMath.hpp" />
     <ClInclude Include="Include\Matrix.hpp" />
     <ClInclude Include="Include\Plain.hpp" />
+    <ClInclude Include="Include\Polygon.hpp" />
     <ClInclude Include="Include\Serializable.hpp" />
     <ClInclude Include="Include\Size.hpp" />
     <ClInclude Include="Include\Size2.hpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="Src\Field3.cpp" />
     <ClCompile Include="Src\FlatBuffer.cpp" />
     <ClCompile Include="Src\Plain.cpp" />
+    <ClCompile Include="Src\Polygon.cpp" />
     <ClCompile Include="Src\Serializable.cpp" />
     <ClCompile Include="Src\Vector.cpp" />
   </ItemGroup>

@@ -26,4 +26,11 @@ util::Vector util::Sphere::closestNormal(const Vector& _otherPoint) const
 
 void util::Sphere::getClosestIntersection(const Ray& _ray, SurfaceRayIntersection3* _Intersection) const
 {
+
+}
+
+util::BoundingBox util::Sphere::boundingBox() const
+{
+	Vector r(radius, radius, radius, 0);
+	return BoundingBox(center - r, center + r);
 }
