@@ -41,6 +41,8 @@
 #include "Sprite_Scene.h"
 #include "Poly_Scene.h"
 
+#include "CFluid_Mgr.h"
+
 class GRAPHIC_API Graphic_Vulkan
 {
 public:

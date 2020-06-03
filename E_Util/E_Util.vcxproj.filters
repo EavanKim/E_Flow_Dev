@@ -81,9 +81,6 @@
     <ClInclude Include="Include\EMath.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Plain.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Include\BoundingBox.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -91,6 +88,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Include\Polygon.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\vSurface.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,9 +107,6 @@
     <ClCompile Include="Src\Serializable.cpp">
       <Filter>소스 파일\Container</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Plain.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Src\BoundingBox.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -117,6 +114,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Src\Polygon.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\vSurface.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

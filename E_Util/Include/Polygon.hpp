@@ -3,7 +3,7 @@
 
 namespace util
 {
-	class Triangle : Plain
+	class Triangle : vSurface
 	{
 	public:
 		std::array<Vector, 3> points;
@@ -23,7 +23,7 @@ namespace util
 		BoundingBox boundingBox() const override;
 	};
 
-	class Polygon : Plain
+	class Polygon : vSurface
 	{
 	public:
 		typedef std::vector<Vector> VectorArray;

@@ -71,11 +71,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Include;%(ProjectDir)Src</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Include;%(ProjectDir)Src</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -89,30 +89,38 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>UTIL_EXPORTS;</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UTIL_EXPORTS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>utilpch.hpp</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Third-Party\stb-master;$(VULKAN_SDK)\Include;C:\glm;C:\glfw-3.3.2.bin.WIN32\include;$(ProjectDir)Include;%(ProjectDir)Src;%(ProjectDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(VULKAN_SDK)\Lib32;C:\glfw-3.3.2.bin.WIN32\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>UTIL_EXPORTS;</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UTIL_EXPORTS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>utilpch.hpp</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AdditionalIncludeDirectories>$(VULKAN_SDK)\Third-Party\stb-master;$(VULKAN_SDK)\Include;C:\glm;C:\glfw-3.3.2.bin.WIN32\include;$(ProjectDir)Include;%(ProjectDir)Src;%(ProjectDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(VULKAN_SDK)\Lib32;C:\glfw-3.3.2.bin.WIN32\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -160,7 +168,7 @@
     <ClInclude Include="Include\FlatBuffer.hpp" />
     <ClInclude Include="Include\EMath.hpp" />
     <ClInclude Include="Include\Matrix.hpp" />
-    <ClInclude Include="Include\Plain.hpp" />
+    <ClInclude Include="Include\vSurface.hpp" />
     <ClInclude Include="Include\Polygon.hpp" />
     <ClInclude Include="Include\Serializable.hpp" />
     <ClInclude Include="Include\Size.hpp" />
@@ -175,7 +183,7 @@
     <ClCompile Include="Src\BoundingBox.cpp" />
     <ClCompile Include="Src\Field3.cpp" />
     <ClCompile Include="Src\FlatBuffer.cpp" />
-    <ClCompile Include="Src\Plain.cpp" />
+    <ClCompile Include="Src\vSurface.cpp" />
     <ClCompile Include="Src\Polygon.cpp" />
     <ClCompile Include="Src\Serializable.cpp" />
     <ClCompile Include="Src\Vector.cpp" />

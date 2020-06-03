@@ -3,7 +3,7 @@
 
 namespace util
 {
-	class Sphere : Plain
+	class Sphere : vSurface
 	{
 	public:
 		Sphere(const Vector& _center, float _radius);
@@ -14,6 +14,17 @@ namespace util
 		void getClosestIntersection(const Ray& _ray, SurfaceRayIntersection3* _Intersection) const override;
 
 		BoundingBox boundingBox() const override;
+
+	private:
+		Vector center;
+		float radius = 1.f;
+	};
+
+	class ImplicitSphere final : public ImplicitSurface
+	{
+	public:
+		ImplicitSphere(const Vector& _center, float _radius);
+		float signedDistance(const Vector& _otherPoint) const override;
 
 	private:
 		Vector center;

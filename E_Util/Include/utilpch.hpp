@@ -20,7 +20,7 @@
 #include "Vector.hpp"
 #include "Matrix.hpp"
 #include "BoundingBox.hpp"
-#include "Plain.hpp"
+#include "vSurface.hpp"
 #include "Sphere.hpp"
 #include "Polygon.hpp"
 #include "EMath.hpp"

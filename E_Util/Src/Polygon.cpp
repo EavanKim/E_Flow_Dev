@@ -1,5 +1,37 @@
 #include "utilpch.hpp"
 
+util::Triangle::Triangle()
+{
+}
+
+util::Triangle::Triangle(const std::array<Vector, 3>& newPoints, const std::array<Vector, 3>& newNormals, std::array<Vector, 3> newUvs)
+{
+}
+
+util::Vector util::Triangle::closestPoint(const Vector& _otherPoint) const
+{
+	return Vector();
+}
+
+util::Vector util::Triangle::closestNormal(const Vector& _otherPoint) const
+{
+	return Vector();
+}
+
+void util::Triangle::getClosestIntersection(const Ray& _ray, SurfaceRayIntersection3* _intersection) const
+{
+}
+
+bool util::Triangle::intersects(const Ray& _ray) const
+{
+	return false;
+}
+
+util::BoundingBox util::Triangle::boundingBox() const
+{
+	return BoundingBox(util::Vector(), util::Vector());
+}
+
 util::Polygon::Polygon()
 {
 }
@@ -36,3 +68,4 @@ float util::Polygon::closestDistance(const Vector& _otherPoint) const
 {
 	return 0.0f;
 }
+

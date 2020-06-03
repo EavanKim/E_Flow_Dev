@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="AABB_Function.h" />
     <ClInclude Include="BSP_Function.h" />
+    <ClInclude Include="CFluid_Mgr.h" />
     <ClInclude Include="CVulkan_Core.h" />
     <ClInclude Include="GV_Buffer.h" />
     <ClInclude Include="GV_Camera.h" />
@@ -44,6 +45,7 @@
   <ItemGroup>
     <ClCompile Include="AABB_Function.cpp" />
     <ClCompile Include="BSP_Function.cpp" />
+    <ClCompile Include="CFluid_Mgr.cpp" />
     <ClCompile Include="CVulkan_Core.cpp" />
     <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="GV_Camera.cpp" />

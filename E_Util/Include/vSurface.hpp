@@ -5,7 +5,8 @@ namespace util
 {
 	class Ray
 	{
-		__m128 m_Data;
+		__m128 m_Point;
+		__m128 m_Direction;
 	};
 
 	struct SurfaceRayIntersection3
@@ -16,12 +17,12 @@ namespace util
 		Vector normal;
 	};
 
-	class Plain
+	class vSurface
 	{
 	public:
-		Plain();
+		vSurface();
 
-		virtual ~Plain();
+		virtual ~vSurface();
 
 		virtual Vector closestPoint(const Vector& _otherPoint) const = 0;
 		virtual Vector closestNormal(const Vector& _otherPoint) const = 0;
@@ -32,6 +33,15 @@ namespace util
 		virtual bool intersects(const Ray& _ray) const;
 
 		virtual float closestDistance(const Vector& _otherPoint) const;
+	};
+
+	class ImplicitSurface : public vSurface
+	{
+	public:
+		ImplicitSurface();
+		virtual ~ImplicitSurface();
+
+		virtual float signedDistance(const Vector& _otherPoint) const = 0;
 	};
 }
 

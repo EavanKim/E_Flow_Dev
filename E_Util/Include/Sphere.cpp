@@ -1,7 +1,7 @@
 #include "utilpch.hpp"
 
 util::Sphere::Sphere(const Vector& _center, float _radius)
-	: Plain()
+	: vSurface()
 	, center(_center)
 	, radius(_radius)
 {
@@ -33,4 +33,15 @@ util::BoundingBox util::Sphere::boundingBox() const
 {
 	Vector r(radius, radius, radius, 0);
 	return BoundingBox(center - r, center + r);
+}
+
+util::ImplicitSphere::ImplicitSphere(const Vector& _center, float _radius)
+	: center(_center)
+	, radius(_radius)
+{
+}
+
+float util::ImplicitSphere::signedDistance(const Vector& _otherPoint) const
+{
+	return center.distanceTo(_otherPoint) - radius;
 }

@@ -164,8 +164,6 @@ namespace util
 		{
 			return _f * _f;
 		}
-
-
 	};
 }
 

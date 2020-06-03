@@ -133,6 +133,7 @@
     <ClInclude Include="GV_SubPass.h">
       <Filter>abstract\Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
     </ClInclude>
+    <ClInclude Include="CFluid_Mgr.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.vert">
@@ -185,5 +186,6 @@
     <ClCompile Include="GV_SubPass.cpp">
       <Filter>abstract\Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
     </ClCompile>
+    <ClCompile Include="CFluid_Mgr.cpp" />
   </ItemGroup>
 </Project>

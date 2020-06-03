@@ -1,6 +1,17 @@
 #ifndef DEFINE_HPP__
 #define DEFINE_HPP__
 
+
+#include <vulkan/vulkan.h>
+#define GLFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
+
+#define GLM_FORCE_RADIANS
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #define M_E        2.71828182845904523536f   // e
 #define M_LOG2E    1.44269504088896340736f   // log2(e)
 #define M_LOG10E   0.434294481903251827651f  // log10(e)
@@ -24,5 +35,7 @@
 #else
 #define UTIL_EXPORTS __declspec(dllimport)
 #endif
+
+
 
 #endif
