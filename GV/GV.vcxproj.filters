@@ -13,61 +13,61 @@
     <Filter Include="GraphicCore">
       <UniqueIdentifier>{107ff1fc-75fc-4396-a979-f5b688439119}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete">
+    <Filter Include="Concrete">
       <UniqueIdentifier>{feb51429-b741-4506-8697-f8589ef17749}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Camera">
+    <Filter Include="Concrete\Camera">
       <UniqueIdentifier>{5491c1a7-bfc0-4c86-a406-6d02839f5cf2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Camera\Static">
+    <Filter Include="Concrete\Camera\Static">
       <UniqueIdentifier>{52a5037d-2426-48ca-b28c-7417dfbb918d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Camera\Dynamic">
+    <Filter Include="Concrete\Camera\Dynamic">
       <UniqueIdentifier>{fea6b251-b67a-4fb6-9816-7099b9694d68}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Scene">
+    <Filter Include="Concrete\Scene">
       <UniqueIdentifier>{96fb0696-a414-4e0c-919f-2ea6107f03f7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Scene\2D">
+    <Filter Include="Concrete\Scene\2D">
       <UniqueIdentifier>{b4016013-a337-4cc5-9983-368d9226dc3e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Scene\3D">
+    <Filter Include="Concrete\Scene\3D">
       <UniqueIdentifier>{eeb50a88-1a28-40bf-b516-6a37ac1b1796}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Resource">
+    <Filter Include="Concrete\Resource">
       <UniqueIdentifier>{838af818-4ff3-4ae6-8088-fbb02da02aca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function">
+    <Filter Include="Concrete\Function">
       <UniqueIdentifier>{169c0488-eab0-44c0-8426-41dbbb33fa99}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\BSP">
+    <Filter Include="Concrete\Function\BSP">
       <UniqueIdentifier>{0fbc45eb-675a-4498-9b60-20654b237bfc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\Collision">
+    <Filter Include="Concrete\Function\Collision">
       <UniqueIdentifier>{b9f836cf-7da0-4f3b-8d03-19684b407f6d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\Collision\AABB">
+    <Filter Include="Concrete\Function\Collision\AABB">
       <UniqueIdentifier>{6e0f1980-34f8-4d22-885b-b24c3fbefc4b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\Collision\OBB">
+    <Filter Include="Concrete\Function\Collision\OBB">
       <UniqueIdentifier>{9ca02417-c601-4c45-9fdf-cec8ebf44deb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\Collision\Module">
+    <Filter Include="Concrete\Function\Collision\Module">
       <UniqueIdentifier>{7fb6178d-973f-4af1-8d0d-31e6ab16cdcb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\Collision\Module\RenderPass">
+    <Filter Include="Concrete\Function\Collision\Module\RenderPass">
       <UniqueIdentifier>{0a6ced45-81da-4a61-884e-e686673df979}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\Collision\Module\RenderPass\SubPass">
+    <Filter Include="Concrete\Function\Collision\Module\RenderPass\SubPass">
       <UniqueIdentifier>{ce16d151-f96f-403b-bf97-d5cf761ad1df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\Collision\Module\Obj">
+    <Filter Include="Concrete\Function\Collision\Module\Obj">
       <UniqueIdentifier>{8113ceb3-f843-4ccb-a24e-1f813e680609}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\Collision\Module\Obj\Sprite">
+    <Filter Include="Concrete\Function\Collision\Module\Obj\Sprite">
       <UniqueIdentifier>{e42c6449-1ad6-4497-a75e-6d2c4cdb3aec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="abstract\Concrete\Function\Collision\Module\Obj\Polygon">
+    <Filter Include="Concrete\Function\Collision\Module\Obj\Polygon">
       <UniqueIdentifier>{db756090-eabe-40e2-9312-e19f3eb991aa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -89,49 +89,49 @@
       <Filter>abstract</Filter>
     </ClInclude>
     <ClInclude Include="GV_Obj.h">
-      <Filter>abstract\Concrete\Function\Collision\Module\Obj</Filter>
+      <Filter>Concrete\Function\Collision\Module\Obj</Filter>
     </ClInclude>
     <ClInclude Include="GV_Camera.h">
-      <Filter>abstract\Concrete\Camera</Filter>
+      <Filter>Concrete\Camera</Filter>
     </ClInclude>
     <ClInclude Include="GV_Define.h">
       <Filter>GraphicCore</Filter>
     </ClInclude>
     <ClInclude Include="GV_Scene.h">
-      <Filter>abstract\Concrete\Scene</Filter>
+      <Filter>Concrete\Scene</Filter>
     </ClInclude>
     <ClInclude Include="GV_Buffer.h">
-      <Filter>abstract\Concrete\Resource</Filter>
+      <Filter>Concrete\Resource</Filter>
     </ClInclude>
     <ClInclude Include="GV_Image.h">
-      <Filter>abstract\Concrete\Resource</Filter>
+      <Filter>Concrete\Resource</Filter>
     </ClInclude>
     <ClInclude Include="Sprite_Obj.h">
-      <Filter>abstract\Concrete\Function\Collision\Module\Obj\Sprite</Filter>
+      <Filter>Concrete\Function\Collision\Module\Obj\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="Static_Camera.h">
-      <Filter>abstract\Concrete\Camera\Static</Filter>
+      <Filter>Concrete\Camera\Static</Filter>
     </ClInclude>
     <ClInclude Include="Sprite_Scene.h">
-      <Filter>abstract\Concrete\Scene\2D</Filter>
+      <Filter>Concrete\Scene\2D</Filter>
     </ClInclude>
     <ClInclude Include="Poly_Scene.h">
-      <Filter>abstract\Concrete\Scene\3D</Filter>
+      <Filter>Concrete\Scene\3D</Filter>
     </ClInclude>
     <ClInclude Include="BSP_Function.h">
-      <Filter>abstract\Concrete\Function\BSP</Filter>
+      <Filter>Concrete\Function\BSP</Filter>
     </ClInclude>
     <ClInclude Include="AABB_Function.h">
-      <Filter>abstract\Concrete\Function\Collision\AABB</Filter>
+      <Filter>Concrete\Function\Collision\AABB</Filter>
     </ClInclude>
     <ClInclude Include="OBB_Fuction.h">
-      <Filter>abstract\Concrete\Function\Collision\OBB</Filter>
+      <Filter>Concrete\Function\Collision\OBB</Filter>
     </ClInclude>
     <ClInclude Include="CVulkan_Core.h">
       <Filter>GraphicCore</Filter>
     </ClInclude>
     <ClInclude Include="GV_SubPass.h">
-      <Filter>abstract\Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
+      <Filter>Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
     </ClInclude>
     <ClInclude Include="CFluid_Mgr.h" />
   </ItemGroup>
@@ -151,40 +151,40 @@
       <Filter>GraphicCore</Filter>
     </ClCompile>
     <ClCompile Include="GV_Obj.cpp">
-      <Filter>abstract\Concrete\Function\Collision\Module\Obj</Filter>
+      <Filter>Concrete\Function\Collision\Module\Obj</Filter>
     </ClCompile>
     <ClCompile Include="GV_Camera.cpp">
-      <Filter>abstract\Concrete\Camera</Filter>
+      <Filter>Concrete\Camera</Filter>
     </ClCompile>
     <ClCompile Include="GV_Scene.cpp">
-      <Filter>abstract\Concrete\Scene</Filter>
+      <Filter>Concrete\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Sprite_Obj.cpp">
-      <Filter>abstract\Concrete\Function\Collision\Module\Obj\Sprite</Filter>
+      <Filter>Concrete\Function\Collision\Module\Obj\Sprite</Filter>
     </ClCompile>
     <ClCompile Include="Static_Camera.cpp">
-      <Filter>abstract\Concrete\Camera\Static</Filter>
+      <Filter>Concrete\Camera\Static</Filter>
     </ClCompile>
     <ClCompile Include="Sprite_Scene.cpp">
-      <Filter>abstract\Concrete\Scene\2D</Filter>
+      <Filter>Concrete\Scene\2D</Filter>
     </ClCompile>
     <ClCompile Include="Poly_Scene.cpp">
-      <Filter>abstract\Concrete\Scene\3D</Filter>
+      <Filter>Concrete\Scene\3D</Filter>
     </ClCompile>
     <ClCompile Include="BSP_Function.cpp">
-      <Filter>abstract\Concrete\Function\BSP</Filter>
+      <Filter>Concrete\Function\BSP</Filter>
     </ClCompile>
     <ClCompile Include="AABB_Function.cpp">
-      <Filter>abstract\Concrete\Function\Collision\AABB</Filter>
+      <Filter>Concrete\Function\Collision\AABB</Filter>
     </ClCompile>
     <ClCompile Include="OBB_Fuction.cpp">
-      <Filter>abstract\Concrete\Function\Collision\OBB</Filter>
+      <Filter>Concrete\Function\Collision\OBB</Filter>
     </ClCompile>
     <ClCompile Include="CVulkan_Core.cpp">
       <Filter>GraphicCore</Filter>
     </ClCompile>
     <ClCompile Include="GV_SubPass.cpp">
-      <Filter>abstract\Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
+      <Filter>Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
     </ClCompile>
     <ClCompile Include="CFluid_Mgr.cpp" />
   </ItemGroup>

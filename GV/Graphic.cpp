@@ -158,7 +158,7 @@ void Graphic_Vulkan::initVulkan()
 void Graphic_Vulkan::readScene()
 {
 	m_Scene = new Sprite_Scene();
-	CreateSpriteObject("texture/Test.png");
+	CreateSpriteObject("textures/texture.png");
 	CreateCameraObject(CAMERA_TYPE::STATIC, m_WindowWidth, m_WindowHeight, m_Object[0]);
 	CreateBufferObject(BUFFER_TYPE::RECTANGLE_BUFFER);
 }
