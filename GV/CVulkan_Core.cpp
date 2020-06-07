@@ -95,13 +95,13 @@ namespace GV_Core
 		, m_ModuleWindow(new CE_Window(_ProgramName, _Width, _Height))
 		, m_PhysicalDevice(new CE_PDevice("pDevice"))
 		, m_VirtualDevice(new CE_VDevice("vDevice"))
-		, m_Surface(new CE_Surface("Surface"))
+		, m_Swapchain(new CE_Swapchain("Swapchain"))
 	{
 		m_Modules->insert(std::make_pair(_ProgramName, (GV_Module*)m_ModuleWindow));
 		m_Modules->insert(std::make_pair("pDevice", (GV_Module*)m_PhysicalDevice));
 		m_Modules->insert(std::make_pair("vDevice", (GV_Module*)m_VirtualDevice));
-		m_Modules->insert(std::make_pair("Surface", (GV_Module*)m_Surface));
-		m_PhysicalDevice->pickPhysicalDevice(m_Vk, m_Surface);
-		m_VirtualDevice->createLogicalDevice(m_PhysicalDevice, m_Surface, true);
+		m_Modules->insert(std::make_pair("Swapchain", (GV_Module*)m_Swapchain));
+		m_PhysicalDevice->pickPhysicalDevice(m_Vk, m_Swapchain);
+		m_VirtualDevice->createLogicalDevice(m_PhysicalDevice, m_Swapchain, true);
 	}
 }

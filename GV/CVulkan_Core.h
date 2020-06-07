@@ -28,9 +28,10 @@
 #include "GV_Instance.h"
 #include "GV_Module.h"
 #include "CE_Window.h"
-#include "CE_Surface.h"
+#include "CE_Swapchain.h"
 #include "CE_PDevice.h"
 #include "CE_VDevice.h"
+#include "CE_Scene.h"
 
 #include "GV_Buffer.h"
 #include "GV_Image.h"
@@ -105,7 +106,7 @@ namespace GV_Core
 		CE_Window* m_ModuleWindow = nullptr;
 		CE_PDevice* m_PhysicalDevice = nullptr;
 		CE_VDevice* m_VirtualDevice = nullptr;
-		CE_Surface* m_Surface = nullptr;
+		CE_Swapchain* m_Swapchain = nullptr;
 		std::unordered_map<std::string, GV_Module*>* m_Modules = nullptr;
 
 		static CVulkan_Core* m_Instance;

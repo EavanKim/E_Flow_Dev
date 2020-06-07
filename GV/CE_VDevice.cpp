@@ -9,7 +9,7 @@ CE_VDevice::~CE_VDevice()
 {
 }
 
-void CE_VDevice::createLogicalDevice(CE_PDevice* _PhysicalDevice, CE_Surface* _Surface, bool _enableValidationLayers)
+void CE_VDevice::createLogicalDevice(CE_PDevice* _PhysicalDevice, CE_Swapchain* _Surface, bool _enableValidationLayers)
 {
 	QueueFamilyIndices indices = _PhysicalDevice->findQueueFamilies(_Surface);
 

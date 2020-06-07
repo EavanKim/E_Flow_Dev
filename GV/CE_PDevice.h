@@ -5,17 +5,17 @@ public:
 	CE_PDevice(std::string _Name);
 	virtual ~CE_PDevice();
 
-	void pickPhysicalDevice(VkInstance _Instance, CE_Surface* _Surface);
+	void pickPhysicalDevice(VkInstance _Instance, CE_Swapchain* _Surface);
 
-	bool isDeviceSuitable(VkPhysicalDevice _device, CE_Surface* _Surface);
+	bool isDeviceSuitable(VkPhysicalDevice _device, CE_Swapchain* _Surface);
 
 	int rateDeviceSuitablility();
 
 	bool checkDeviceExtensionSupport(VkPhysicalDevice _device);
 
-	SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice _device, CE_Surface* _Surface);
+	SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice _device, CE_Swapchain* _Surface);
 
-	QueueFamilyIndices findQueueFamilies(CE_Surface* _Surface);
+	QueueFamilyIndices findQueueFamilies(CE_Swapchain* _Surface);
 
 	VkPhysicalDevice GetDevice();
 

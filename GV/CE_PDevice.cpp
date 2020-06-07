@@ -9,7 +9,7 @@ CE_PDevice::~CE_PDevice()
 {
 }
 
-void CE_PDevice::pickPhysicalDevice(VkInstance _Instance, CE_Surface* _Surface)
+void CE_PDevice::pickPhysicalDevice(VkInstance _Instance, CE_Swapchain* _Surface)
 {
 	uint32_t deviceCount = 0;
 	vkEnumeratePhysicalDevices(_Instance, &deviceCount, nullptr);
@@ -33,7 +33,7 @@ void CE_PDevice::pickPhysicalDevice(VkInstance _Instance, CE_Surface* _Surface)
 		throw std::runtime_error("failed to find a suitable GPU!");
 }
 
-bool CE_PDevice::isDeviceSuitable(VkPhysicalDevice _device, CE_Surface* _Surface)
+bool CE_PDevice::isDeviceSuitable(VkPhysicalDevice _device, CE_Swapchain* _Surface)
 {
 	QueueFamilyIndices indices = findQueueFamilies(_Surface);
 
@@ -79,7 +79,7 @@ bool CE_PDevice::checkDeviceExtensionSupport(VkPhysicalDevice _device)
 	return requiredExtensions.empty();
 }
 
-SwapChainSupportDetails CE_PDevice::querySwapChainSupport(VkPhysicalDevice _device, CE_Surface* _Surface)
+SwapChainSupportDetails CE_PDevice::querySwapChainSupport(VkPhysicalDevice _device, CE_Swapchain* _Surface)
 {
 	SwapChainSupportDetails details;
 
@@ -106,7 +106,7 @@ SwapChainSupportDetails CE_PDevice::querySwapChainSupport(VkPhysicalDevice _devi
 	return details;
 }
 
-QueueFamilyIndices CE_PDevice::findQueueFamilies(CE_Surface* _Surface)
+QueueFamilyIndices CE_PDevice::findQueueFamilies(CE_Swapchain* _Surface)
 {
 	QueueFamilyIndices indices;
 

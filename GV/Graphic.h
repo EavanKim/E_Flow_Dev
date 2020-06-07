@@ -27,9 +27,10 @@
 #include "GV_Instance.h"
 #include "GV_Module.h"
 #include "CE_Window.h"
-#include "CE_Surface.h"
+#include "CE_Swapchain.h"
 #include "CE_PDevice.h"
 #include "CE_VDevice.h"
+#include "CE_Scene.h"
 
 #include "GV_Buffer.h"
 #include "GV_Image.h"
@@ -231,7 +232,6 @@ private:
 	///
 	//Image Views
 	void createImageViews();
-
 
 	std::vector<VkImageView> m_SwapChainImageViews;
 	///
