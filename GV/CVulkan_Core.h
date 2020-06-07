@@ -26,6 +26,10 @@
 #include "GV_Struct.h"
 
 #include "GV_Instance.h"
+#include "GV_Module.h"
+#include "CE_Window.h"
+#include "CE_PDevice.h"
+#include "CE_VDevice.h"
 
 #include "GV_Buffer.h"
 #include "GV_Image.h"
@@ -49,21 +53,15 @@ namespace GV_Core
 	class CVulkan_Core
 	{
 	public:
-		static void CreateInstance(char* _ProgramName, int _Width = 800, int _Height = 600);
+		static void CreateInstance(std::string _ProgramName, int _Width = 800, int _Height = 600);
 		static CVulkan_Core* GetInstance();
 		void DestroyInstance();
-
-		void initWindow(void(*_framebufferResizeCallback)(GLFWwindow* _window, int _width, int _height) = nullptr, void(*_Key_Callback_Function)(GLFWwindow* _window, int _key, int _scancode, int _action, int _mods) = nullptr);
-		void DestroyWindow();
 
 		void initVulkan();
 		void readScene();
 		void mainLoop();
 		void cleanup();
 		void DrawScene();
-
-		static void framebufferResizeCallback(GLFWwindow* _window, int _width, int _height);
-		static void DefaultKey_callback(GLFWwindow* _window, int _key, int _scancode, int _action, int _mods);
 
 	protected:
 #pragma region Validation Layers
@@ -83,8 +81,6 @@ namespace GV_Core
 
 		void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& _debugInfo);
 
-
-
 		const std::vector<const char*> validationLayers = { "VK_LAYER_KHRONOS_validation" };
 
 #ifdef NDEBUG
@@ -98,18 +94,16 @@ namespace GV_Core
 #pragma endregion
 
 	private:
-		explicit CVulkan_Core(char* _ProgramName, int _Widht, int _Height);
-
-		int m_WindowWidth = 800;
-		int m_WindowHeight = 600;
-
-		bool m_FramebufferResized = false;
-
-		GLFWwindow* m_Window = nullptr;
+		explicit CVulkan_Core(std::string _ProgramName, int _Widht, int _Height);
 
 		GV_Scene* m_CurrentScene = nullptr;
 
 		std::string m_ProgramName = nullptr;
+
+		CE_Window m_ModuleWindow;
+		CE_PDevice m_PhysicalDevice;
+		CE_VDevice m_VirtualDevice;
+		std::unordered_map<std::string, GV_Module*> m_Modules;
 
 		static CVulkan_Core* m_Instance;
 	};

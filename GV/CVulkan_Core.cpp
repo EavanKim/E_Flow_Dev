@@ -4,7 +4,7 @@ namespace GV_Core
 {
 	CVulkan_Core* CVulkan_Core::m_Instance = nullptr;
 
-	void CVulkan_Core::CreateInstance(char* _ProgramName, int _Width, int _Height)
+	void CVulkan_Core::CreateInstance(std::string _ProgramName, int _Width, int _Height)
 	{
 		if (!m_Instance)
 			m_Instance = new CVulkan_Core(_ProgramName, _Width, _Height);
@@ -28,42 +28,6 @@ namespace GV_Core
 		}
 	}
 
-	void CVulkan_Core::initWindow(void(*_framebufferResizeCallback)(GLFWwindow* _window, int _width, int _height), void(*_Key_Callback_Function)(GLFWwindow* _window, int _key, int _scancode, int _action, int _mods))
-	{	
-		///
-		//default
-		glfwInit();
-		///
-
-		///
-		//Instance
-		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-		//glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-
-		m_Window = glfwCreateWindow(m_WindowWidth, m_WindowHeight, "EW_GV", nullptr, nullptr);
-		///
-
-		///
-		//Swap Chain Recreation
-		if(!_framebufferResizeCallback)
-			glfwSetFramebufferSizeCallback(m_Window, _framebufferResizeCallback);
-		else
-			glfwSetFramebufferSizeCallback(m_Window, framebufferResizeCallback);
-		///
-
-		if(!_Key_Callback_Function)
-			glfwSetKeyCallback(m_Window, _Key_Callback_Function);
-		else
-			glfwSetKeyCallback(m_Window, DefaultKey_callback);
-	}
-
-	void CVulkan_Core::DestroyWindow()
-	{
-		glfwDestroyWindow(m_Window);
-
-		glfwTerminate();
-	}
-
 	void CVulkan_Core::initVulkan()
 	{
 
@@ -76,28 +40,20 @@ namespace GV_Core
 
 	void CVulkan_Core::mainLoop()
 	{
-		while (!glfwWindowShouldClose(m_Window))
+		while (!glfwWindowShouldClose(m_ModuleWindow.GetPoint()))
 		{
 			glfwPollEvents();
 			DrawScene();
 		}
 	}
 
-
-
 	void CVulkan_Core::cleanup()
 	{
 
 
-		DestroyWindow();
 	}
 
 	void CVulkan_Core::DrawScene()
-	{
-
-	}
-
-	void CVulkan_Core::DefaultKey_callback(GLFWwindow* _window, int _key, int _scancode, int _action, int _mods)
 	{
 
 	}
@@ -134,16 +90,14 @@ namespace GV_Core
 	{
 	}
 
-	void CVulkan_Core::framebufferResizeCallback(GLFWwindow* _window, int _width, int _height)
+	CVulkan_Core::CVulkan_Core(std::string _ProgramName, int _Width, int _Height)
+		: m_ProgramName(_ProgramName)
+		, m_ModuleWindow(_ProgramName, _Width, _Height)
+		, m_PhysicalDevice("pDevice")
+		, m_VirtualDevice("vDevice")
 	{
-		CVulkan_Core::GetInstance()->m_FramebufferResized = true;
-	}
-
-	CVulkan_Core::CVulkan_Core(char* _ProgramName, int _Widht, int _Height)
-		: m_WindowWidth(_Widht)
-		, m_WindowHeight(_Height)
-		, m_ProgramName(_ProgramName)
-	{
-
+		m_Modules.insert(std::make_pair(_ProgramName, (GV_Module*)&m_ModuleWindow));
+		m_Modules.insert(std::make_pair("pDevice", (GV_Module*)&m_PhysicalDevice));
+		m_Modules.insert(std::make_pair("vDevice", (GV_Module*)&m_VirtualDevice));
 	}
 }

@@ -25,6 +25,10 @@
 #include "GV_Struct.h"
 
 #include "GV_Instance.h"
+#include "GV_Module.h"
+#include "CE_Window.h"
+#include "CE_PDevice.h"
+#include "CE_VDevice.h"
 
 #include "GV_Buffer.h"
 #include "GV_Image.h"

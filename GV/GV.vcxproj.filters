@@ -70,6 +70,18 @@
     <Filter Include="Concrete\Function\Collision\Module\Obj\Polygon">
       <UniqueIdentifier>{db756090-eabe-40e2-9312-e19f3eb991aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GraphicCore\Builder">
+      <UniqueIdentifier>{5e0c1bbc-0d5d-4026-96e5-40bc8625d78d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module">
+      <UniqueIdentifier>{e4fd95bb-137e-4a6d-8f47-a5e178f156b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module\Window">
+      <UniqueIdentifier>{f7354753-6310-4fc3-b58b-c2e5be5f911a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module\Device">
+      <UniqueIdentifier>{72a6eb8b-e010-4e86-86fc-e3af373bf0fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GV.h">
@@ -134,6 +146,18 @@
       <Filter>Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
     </ClInclude>
     <ClInclude Include="CFluid_Mgr.h" />
+    <ClInclude Include="GV_Module.h">
+      <Filter>GraphicCore\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="CE_Window.h">
+      <Filter>GraphicCore\Module\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="CE_PDevice.h">
+      <Filter>GraphicCore\Module\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="CE_VDevice.h">
+      <Filter>GraphicCore\Module\Device</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.vert">
@@ -187,5 +211,17 @@
       <Filter>Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
     </ClCompile>
     <ClCompile Include="CFluid_Mgr.cpp" />
+    <ClCompile Include="GV_Module.cpp">
+      <Filter>GraphicCore\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="CE_Window.cpp">
+      <Filter>GraphicCore\Module\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="CE_PDevice.cpp">
+      <Filter>GraphicCore\Module\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="CE_VDevice.cpp">
+      <Filter>GraphicCore\Module\Device</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

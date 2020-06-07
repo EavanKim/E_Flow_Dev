@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClInclude Include="AABB_Function.h" />
     <ClInclude Include="BSP_Function.h" />
+    <ClInclude Include="CE_PDevice.h" />
+    <ClInclude Include="CE_VDevice.h" />
+    <ClInclude Include="CE_Window.h" />
     <ClInclude Include="CFluid_Mgr.h" />
     <ClInclude Include="CVulkan_Core.h" />
     <ClInclude Include="GV_Buffer.h" />
@@ -31,6 +34,7 @@
     <ClInclude Include="GV.h" />
     <ClInclude Include="GV_Image.h" />
     <ClInclude Include="GV_Instance.h" />
+    <ClInclude Include="GV_Module.h" />
     <ClInclude Include="GV_Obj.h" />
     <ClInclude Include="GV_Scene.h" />
     <ClInclude Include="GV_Struct.h" />
@@ -45,10 +49,14 @@
   <ItemGroup>
     <ClCompile Include="AABB_Function.cpp" />
     <ClCompile Include="BSP_Function.cpp" />
+    <ClCompile Include="CE_PDevice.cpp" />
+    <ClCompile Include="CE_VDevice.cpp" />
+    <ClCompile Include="CE_Window.cpp" />
     <ClCompile Include="CFluid_Mgr.cpp" />
     <ClCompile Include="CVulkan_Core.cpp" />
     <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="GV_Camera.cpp" />
+    <ClCompile Include="GV_Module.cpp" />
     <ClCompile Include="GV_Obj.cpp" />
     <ClCompile Include="GV_Scene.cpp" />
     <ClCompile Include="GV_SubPass.cpp" />
