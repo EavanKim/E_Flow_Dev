@@ -5,13 +5,19 @@ public:
 	CE_PDevice(std::string _Name);
 	virtual ~CE_PDevice();
 
-	void pickPhysicalDevice();
+	void pickPhysicalDevice(VkInstance _Instance, CE_Surface* _Surface);
 
-	bool isDeviceSuitable(VkPhysicalDevice _device);
+	bool isDeviceSuitable(VkPhysicalDevice _device, CE_Surface* _Surface);
 
-	int rateDeviceSuitablility(VkPhysicalDevice _device);
+	int rateDeviceSuitablility();
 
-	QueueFamilyIndices findQueueFamilies(VkPhysicalDevice _device);
+	bool checkDeviceExtensionSupport(VkPhysicalDevice _device);
+
+	SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice _device, CE_Surface* _Surface);
+
+	QueueFamilyIndices findQueueFamilies(CE_Surface* _Surface);
+
+	VkPhysicalDevice GetDevice();
 
 	// GV_Module을(를) 통해 상속됨
 	virtual void DestroyInstance(VkDevice _device) override;

@@ -22,6 +22,7 @@
     <ClInclude Include="AABB_Function.h" />
     <ClInclude Include="BSP_Function.h" />
     <ClInclude Include="CE_PDevice.h" />
+    <ClInclude Include="CE_Surface.h" />
     <ClInclude Include="CE_VDevice.h" />
     <ClInclude Include="CE_Window.h" />
     <ClInclude Include="CFluid_Mgr.h" />
@@ -50,6 +51,7 @@
     <ClCompile Include="AABB_Function.cpp" />
     <ClCompile Include="BSP_Function.cpp" />
     <ClCompile Include="CE_PDevice.cpp" />
+    <ClCompile Include="CE_Surface.cpp" />
     <ClCompile Include="CE_VDevice.cpp" />
     <ClCompile Include="CE_Window.cpp" />
     <ClCompile Include="CFluid_Mgr.cpp" />

@@ -27,6 +27,7 @@
 #include "GV_Instance.h"
 #include "GV_Module.h"
 #include "CE_Window.h"
+#include "CE_Surface.h"
 #include "CE_PDevice.h"
 #include "CE_VDevice.h"
 

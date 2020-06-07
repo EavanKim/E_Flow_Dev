@@ -82,6 +82,9 @@
     <Filter Include="GraphicCore\Module\Device">
       <UniqueIdentifier>{72a6eb8b-e010-4e86-86fc-e3af373bf0fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GraphicCore\Module\SwapChain">
+      <UniqueIdentifier>{16acf667-b659-476f-89d8-ff69f897c0ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GV.h">
@@ -158,6 +161,9 @@
     <ClInclude Include="CE_VDevice.h">
       <Filter>GraphicCore\Module\Device</Filter>
     </ClInclude>
+    <ClInclude Include="CE_Surface.h">
+      <Filter>GraphicCore\Module\SwapChain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.vert">
@@ -222,6 +228,9 @@
     </ClCompile>
     <ClCompile Include="CE_VDevice.cpp">
       <Filter>GraphicCore\Module\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="CE_Surface.cpp">
+      <Filter>GraphicCore\Module\SwapChain</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
