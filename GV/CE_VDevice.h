@@ -9,6 +9,8 @@ public:
 	// GV_Module을(를) 통해 상속됨
 	virtual void DestroyInstance(VkDevice _device) override;
 
+	VkDevice GetDevice();
+
 private:
 
 	VkQueue m_GraphicsQueue = nullptr;

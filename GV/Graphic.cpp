@@ -1,4 +1,7 @@
-#include "GV.h"
+#include "Graphic.h"
+
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
 
 Graphic_Vulkan* Graphic_Vulkan::m_Instance = nullptr;
 

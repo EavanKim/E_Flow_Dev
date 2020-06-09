@@ -119,11 +119,33 @@ const std::vector<uint16_t> indices = {
 };
 ///
 
-static VkApplicationInfo GetApplicationInfo()
-{
-    VkApplicationInfo VkInfo = {};
 
-    return VkInfo;
+static VkApplicationInfo GetApplicationInfo(char* _applicationName, char* _enginName, int _appMajorVersion, int _appMinorVersion, int _appPatchVersion, int _engineMajorVersion, int _engineMinorVersion, int _enginePatchVersion)
+{
+	VkApplicationInfo VkInfo = {};
+
+	VkInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
+	VkInfo.pApplicationName = _applicationName;
+	VkInfo.applicationVersion = VK_MAKE_VERSION(_appMajorVersion, _appMinorVersion, _appPatchVersion);
+	VkInfo.pEngineName = _enginName;
+	VkInfo.engineVersion = VK_MAKE_VERSION(_engineMajorVersion, _engineMinorVersion, _enginePatchVersion);
+	VkInfo.apiVersion = VK_API_VERSION_1_0;
+
+	return VkInfo;
+}
+
+static VkApplicationInfo GetApplicationInfo(const char* _applicationName, const char* _enginName, int _appMajorVersion, int _appMinorVersion, int _appPatchVersion, int _engineMajorVersion, int _engineMinorVersion, int _enginePatchVersion)
+{
+	VkApplicationInfo VkInfo = {};
+
+	VkInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
+	VkInfo.pApplicationName = _applicationName;
+	VkInfo.applicationVersion = VK_MAKE_VERSION(_appMajorVersion, _appMinorVersion, _appPatchVersion);
+	VkInfo.pEngineName = _enginName;
+	VkInfo.engineVersion = VK_MAKE_VERSION(_engineMajorVersion, _engineMinorVersion, _enginePatchVersion);
+	VkInfo.apiVersion = VK_API_VERSION_1_0;
+
+	return VkInfo;
 }
 
 ///

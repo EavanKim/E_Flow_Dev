@@ -30,7 +30,63 @@ namespace GV_Core
 
 	void CVulkan_Core::initVulkan()
 	{
+		createVK();
 
+		m_PhysicalDevice->pickPhysicalDevice(m_Vk, m_Swapchain);
+		m_VirtualDevice->createLogicalDevice(m_PhysicalDevice, m_Swapchain, true);
+		m_Swapchain->createSurface(m_Vk, m_ModuleWindow);
+		m_Swapchain->createSwapChain(m_PhysicalDevice, m_VirtualDevice);
+	}
+
+	void CVulkan_Core::createVK()
+	{
+		///
+//Validation Layers
+		if (enableValidationLayers && !checkValidationLayerSupport()) {
+			throw std::runtime_error("validation layers requested, but not available!");
+		}
+		///
+
+		///
+		//Window Infomation
+		VkApplicationInfo VkInfo = GetApplicationInfo("EW_GV", "Eavan's Work", 0, 1, 0, 0, 1, 0);
+		///
+
+
+		///
+		//Vulkan Infomation
+		VkInstanceCreateInfo VkInstanceInfo = {};
+		VkInstanceInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
+		VkInstanceInfo.pApplicationInfo = &VkInfo;
+		///
+
+		///
+		//Validation Layers
+		std::vector<const char*> extensions = getRequiredExtensions();
+		VkInstanceInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
+		VkInstanceInfo.ppEnabledExtensionNames = extensions.data();
+
+		VkDebugUtilsMessengerCreateInfoEXT debugInfo;
+		if (enableValidationLayers)
+		{
+			VkInstanceInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
+			VkInstanceInfo.ppEnabledLayerNames = validationLayers.data();
+
+			populateDebugMessengerCreateInfo(debugInfo);
+			VkInstanceInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&debugInfo;
+		}
+		else
+		{
+			VkInstanceInfo.enabledLayerCount = 0;
+
+			VkInstanceInfo.pNext = nullptr;
+		}
+		///
+
+		///
+		//Create vk
+		CheckSuccessInRuntime(vkCreateInstance(&VkInstanceInfo, nullptr, &m_Vk), "failed to create instance!");
+		///
 	}
 
 	void CVulkan_Core::readScene()
@@ -56,6 +112,44 @@ namespace GV_Core
 	void CVulkan_Core::DrawScene()
 	{
 
+	}
+
+	void CVulkan_Core::Suspend()
+	{
+	}
+
+	void CVulkan_Core::Reseum()
+	{
+	}
+
+	void CVulkan_Core::CheckSuccessInRuntime(VkResult _result, char* _comment)
+	{
+
+		if (_result != VK_SUCCESS)
+		{
+			switch (_result)
+			{
+
+			default:
+				throw std::runtime_error(_comment);
+				break;
+			}
+		}
+	}
+
+	void CVulkan_Core::CheckSuccessInRuntime(VkResult _result, const char* _comment)
+	{
+
+		if (_result != VK_SUCCESS)
+		{
+			switch (_result)
+			{
+
+			default:
+				throw std::runtime_error(_comment);
+				break;
+			}
+		}
 	}
 
 	bool CVulkan_Core::checkValidationLayerSupport()
@@ -101,7 +195,5 @@ namespace GV_Core
 		m_Modules->insert(std::make_pair("pDevice", (GV_Module*)m_PhysicalDevice));
 		m_Modules->insert(std::make_pair("vDevice", (GV_Module*)m_VirtualDevice));
 		m_Modules->insert(std::make_pair("Swapchain", (GV_Module*)m_Swapchain));
-		m_PhysicalDevice->pickPhysicalDevice(m_Vk, m_Swapchain);
-		m_VirtualDevice->createLogicalDevice(m_PhysicalDevice, m_Swapchain, true);
 	}
 }

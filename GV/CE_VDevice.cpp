@@ -68,3 +68,8 @@ void CE_VDevice::DestroyInstance(VkDevice _device)
 {
 
 }
+
+VkDevice CE_VDevice::GetDevice()
+{
+	return m_Device;
+}

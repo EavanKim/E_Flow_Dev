@@ -1,6 +1,7 @@
 #ifndef CVULKANCORE_HPP_
 #define CVULKANCORE_HPP_
 
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -52,7 +53,7 @@
 
 namespace GV_Core
 {
-	class CVulkan_Core
+	class GRAPHIC_API CVulkan_Core
 	{
 	public:
 		static void CreateInstance(std::string _ProgramName, int _Width = 800, int _Height = 600);
@@ -60,10 +61,17 @@ namespace GV_Core
 		void DestroyInstance();
 
 		void initVulkan();
+		void createVK();
 		void readScene();
 		void mainLoop();
 		void cleanup();
 		void DrawScene();
+
+		void Suspend();
+		void Reseum();
+
+		void CheckSuccessInRuntime(VkResult _result, char* _comment);
+		void CheckSuccessInRuntime(VkResult _result, const char* _comment);
 
 	protected:
 #pragma region Validation Layers

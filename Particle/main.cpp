@@ -18,7 +18,7 @@ int main()
 														util::Vector(90, 80, 70, 0), util::Vector(100, 90, 80, 0), util::Vector(90, 80, 70, 0), util::Vector(100, 90, 80, 0),
 														0.5f, 0.5f, 0.5f);
 
-	Command::Graphic::run();
+	Command::Graphic::run("Test", 800, 600);
 
 	return 0;
 }
