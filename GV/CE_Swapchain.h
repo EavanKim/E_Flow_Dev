@@ -24,9 +24,13 @@ public:
 
 	void createSwapChain(CE_PDevice* _PDevice, CE_VDevice* _VDevice);
 
+	void createImageViews();
+	void createFramebuffers();
+
+
 	void recreateSwapChain();
 
-	void cleanupSwapChain();
+	void cleanupSwapChain(CE_VDevice* _VDevice);
 
 	static void framebufferResizeCallback(GLFWwindow* _window, int _width, int _height);
 
@@ -35,6 +39,9 @@ public:
 	virtual void DestroyInstance(VkDevice _device) override;
 
 private:
+	std::vector<VkFramebuffer> m_SwapChainFramebuffers;
+
+	std::vector<VkImageView> m_SwapChainImageViews;
 	VkQueue m_PresentQueue = nullptr;
 
 	VkSurfaceKHR m_Surface = VK_NULL_HANDLE;

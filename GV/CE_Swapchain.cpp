@@ -104,12 +104,27 @@ void CE_Swapchain::createSwapChain(CE_PDevice* _PDevice, CE_VDevice* _VDevice)
 	m_SwapChainExtent = extent;
 }
 
+void CE_Swapchain::createImageViews()
+{
+}
+
+void CE_Swapchain::createFramebuffers()
+{
+}
+
 void CE_Swapchain::recreateSwapChain()
 {
 }
 
-void CE_Swapchain::cleanupSwapChain()
+void CE_Swapchain::cleanupSwapChain(CE_VDevice* _VDevice)
 {
+	for (size_t Count = 0; m_SwapChainFramebuffers.size() > Count; ++Count)
+		vkDestroyFramebuffer(_VDevice->GetDevice(), m_SwapChainFramebuffers[Count], nullptr);
+
+	for (size_t Count = 0; m_SwapChainImageViews.size() > Count; ++Count)
+		vkDestroyImageView(_VDevice->GetDevice(), m_SwapChainImageViews[Count], nullptr);
+
+	vkDestroySwapchainKHR(_VDevice->GetDevice(), m_SwapChain, nullptr);
 }
 
 void CE_Swapchain::framebufferResizeCallback(GLFWwindow* _window, int _width, int _height)
