@@ -20,11 +20,14 @@ public:
 
 	VkPresentModeKHR chooseSwapPresentMode(const std::vector<VkPresentModeKHR>& _avaliablePresentModes);
 
-	VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& _capabilities);
+	VkExtent2D chooseSwapExtent(CE_Window* _Window, const VkSurfaceCapabilitiesKHR& _capabilities);
 
-	void createSwapChain(CE_PDevice* _PDevice, CE_VDevice* _VDevice);
+	void createSwapChain(CE_Window* _Window, CE_PDevice* _PDevice, CE_VDevice* _VDevice);
 
-	void createImageViews();
+	void createImageViews(CE_VDevice* _Device);
+
+	VkImageView createImageView(CE_VDevice* _Device, VkImage _image, VkFormat _format, VkImageAspectFlags _aspectFlages);
+
 	void createFramebuffers();
 
 

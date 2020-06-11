@@ -37,21 +37,43 @@ VkSurfaceFormatKHR CE_Swapchain::chooseSwapSurfaceFormat(const std::vector<VkSur
 
 VkPresentModeKHR CE_Swapchain::chooseSwapPresentMode(const std::vector<VkPresentModeKHR>& _avaliablePresentModes)
 {
-	return VkPresentModeKHR();
+	for (const VkPresentModeKHR& availablePresentMode : _avaliablePresentModes)
+	{
+		if (availablePresentMode == VK_PRESENT_MODE_MAILBOX_KHR)
+			return availablePresentMode;
+	}
+
+	return VK_PRESENT_MODE_FIFO_KHR;
 }
 
-VkExtent2D CE_Swapchain::chooseSwapExtent(const VkSurfaceCapabilitiesKHR& _capabilities)
+VkExtent2D CE_Swapchain::chooseSwapExtent(CE_Window* _Window, const VkSurfaceCapabilitiesKHR& _capabilities)
 {
-	return VkExtent2D();
+	if (_capabilities.currentExtent.width != UINT32_MAX)
+		return _capabilities.currentExtent;
+	else
+	{
+		int width, height;
+
+		glfwGetFramebufferSize(_Window->GetPoint(), &width, &height);
+
+		//VkExtent2D actualExtent = {m_WindowWidth, m_WindowHeight};
+
+		VkExtent2D actualExtent = { static_cast<uint32_t>(width), static_cast<uint32_t>(height) };
+
+		actualExtent.width = std::max(_capabilities.minImageExtent.width, std::min(_capabilities.maxImageExtent.width, actualExtent.width));
+		actualExtent.height = std::max(_capabilities.minImageExtent.height, std::min(_capabilities.maxImageExtent.height, actualExtent.height));
+
+		return actualExtent;
+	}
 }
 
-void CE_Swapchain::createSwapChain(CE_PDevice* _PDevice, CE_VDevice* _VDevice)
+void CE_Swapchain::createSwapChain(CE_Window* _Window, CE_PDevice* _PDevice, CE_VDevice* _VDevice)
 {
 	SwapChainSupportDetails swapChainSupport = querySwapChainSupport(_PDevice->GetDevice());
 
 	VkSurfaceFormatKHR surfaceFormat = chooseSwapSurfaceFormat(swapChainSupport.formats);
 	VkPresentModeKHR presentMode = chooseSwapPresentMode(swapChainSupport.presentModes);
-	VkExtent2D extent = chooseSwapExtent(swapChainSupport.capabilities);
+	VkExtent2D extent = chooseSwapExtent(_Window, swapChainSupport.capabilities);
 
 	uint32_t imageCount = swapChainSupport.capabilities.minImageCount + 1;
 
@@ -104,8 +126,66 @@ void CE_Swapchain::createSwapChain(CE_PDevice* _PDevice, CE_VDevice* _VDevice)
 	m_SwapChainExtent = extent;
 }
 
-void CE_Swapchain::createImageViews()
+void CE_Swapchain::createImageViews(CE_VDevice* _Device)
 {
+	m_SwapChainImageViews.resize(m_SwapChainImages.size());
+
+	//for (size_t Count = 0; m_SwapChainImages.size() > Count; ++Count)
+	//{
+	//	VkImageViewCreateInfo ImageViewInfo = {};
+
+	//	ImageViewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+	//	ImageViewInfo.image = m_SwapChainImages[Count];
+
+	//	ImageViewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
+	//	ImageViewInfo.format = m_SwapChainImageFormat;
+
+	//	ImageViewInfo.components.r = VK_COMPONENT_SWIZZLE_IDENTITY;
+	//	ImageViewInfo.components.g = VK_COMPONENT_SWIZZLE_IDENTITY;
+	//	ImageViewInfo.components.b = VK_COMPONENT_SWIZZLE_IDENTITY;
+	//	ImageViewInfo.components.a = VK_COMPONENT_SWIZZLE_IDENTITY;
+
+	//	ImageViewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+	//	ImageViewInfo.subresourceRange.baseMipLevel = 0;
+	//	ImageViewInfo.subresourceRange.layerCount = 1;
+	//	ImageViewInfo.subresourceRange.baseArrayLayer = 0;
+	//	ImageViewInfo.subresourceRange.layerCount = 1;
+
+	//	if (vkCreateImageView(m_Device, &ImageViewInfo, nullptr, &m_SwapChainImageViews[Count]) != VK_SUCCESS)
+	//		throw std::runtime_error("failed to create image views!");
+	//}
+
+	///
+	//Imageview
+	//for (uint32_t Count = 0; m_SwapChainImages.size() > Count; ++Count)
+	//	m_SwapChainImageViews[Count] = createImageView(m_SwapChainImages[Count], m_SwapChainImageFormat);
+	///
+
+	///
+	//Depth buffers
+	for (uint32_t Count = 0; m_SwapChainImages.size() > Count; ++Count)
+		m_SwapChainImageViews[Count] = createImageView(_Device, m_SwapChainImages[Count], m_SwapChainImageFormat, VK_IMAGE_ASPECT_COLOR_BIT);
+	///
+}
+
+VkImageView CE_Swapchain::createImageView(CE_VDevice* _Device, VkImage _image, VkFormat _format, VkImageAspectFlags _aspectFlages)
+{
+	VkImageViewCreateInfo viewInfo = {};
+	viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+	viewInfo.image = _image;
+	viewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
+	viewInfo.format = _format;
+	viewInfo.subresourceRange.aspectMask = _aspectFlages;
+	viewInfo.subresourceRange.baseMipLevel = 0;
+	viewInfo.subresourceRange.levelCount = 1;
+	viewInfo.subresourceRange.baseArrayLayer = 0;
+	viewInfo.subresourceRange.layerCount = 1;
+
+	VkImageView imageView = VK_NULL_HANDLE;
+	if (vkCreateImageView(_Device->GetDevice(), &viewInfo, nullptr, &imageView) != VK_SUCCESS)
+		throw std::runtime_error("failed to create texture image view!");
+
+	return imageView;
 }
 
 void CE_Swapchain::createFramebuffers()

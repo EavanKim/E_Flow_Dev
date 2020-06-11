@@ -35,7 +35,7 @@ namespace GV_Core
 		m_PhysicalDevice->pickPhysicalDevice(m_Vk, m_Swapchain);
 		m_VirtualDevice->createLogicalDevice(m_PhysicalDevice, m_Swapchain, true);
 		m_Swapchain->createSurface(m_Vk, m_ModuleWindow);
-		m_Swapchain->createSwapChain(m_PhysicalDevice, m_VirtualDevice);
+		m_Swapchain->createSwapChain(m_ModuleWindow, m_PhysicalDevice, m_VirtualDevice);
 	}
 
 	void CVulkan_Core::createVK()
