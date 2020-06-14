@@ -28,6 +28,7 @@
 #include "GV_Module.h"
 #include "CE_Window.h"
 #include "CE_Swapchain.h"
+#include "CE_RenderPass.h"
 #include "CE_PDevice.h"
 #include "CE_VDevice.h"
 #include "CE_Scene.h"
@@ -279,10 +280,10 @@ private:
 	///
 	//Command Pools
 	void createCommandPool();
+
 	void createCommandBuffers();
 
 	void createCustomCommandBuffers();
-
 
 	std::vector<VkCommandBuffer> m_CommandBuffers;
 

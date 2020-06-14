@@ -88,6 +88,12 @@
     <Filter Include="GraphicCore\Module\Scene">
       <UniqueIdentifier>{f0501d1a-363b-439c-a6b2-409befe5e5dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GraphicCore\Module\RenderPass">
+      <UniqueIdentifier>{d606fa6e-272b-42af-bd4c-08e92d10b51b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module\Scene\Builder">
+      <UniqueIdentifier>{7c6d44f6-bd43-4d24-86f9-9d6e9be6f628}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GV.h">
@@ -170,6 +176,9 @@
     <ClInclude Include="CE_Scene.h">
       <Filter>GraphicCore\Module\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CE_RenderPass.h">
+      <Filter>GraphicCore\Module\RenderPass</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.vert">
@@ -240,6 +249,9 @@
     </ClCompile>
     <ClCompile Include="CE_Scene.cpp">
       <Filter>GraphicCore\Module\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CE_RenderPass.cpp">
+      <Filter>GraphicCore\Module\RenderPass</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

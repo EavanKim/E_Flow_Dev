@@ -22,6 +22,7 @@
     <ClInclude Include="AABB_Function.h" />
     <ClInclude Include="BSP_Function.h" />
     <ClInclude Include="CE_PDevice.h" />
+    <ClInclude Include="CE_RenderPass.h" />
     <ClInclude Include="CE_Scene.h" />
     <ClInclude Include="CE_Swapchain.h" />
     <ClInclude Include="CE_VDevice.h" />
@@ -52,6 +53,7 @@
     <ClCompile Include="AABB_Function.cpp" />
     <ClCompile Include="BSP_Function.cpp" />
     <ClCompile Include="CE_PDevice.cpp" />
+    <ClCompile Include="CE_RenderPass.cpp" />
     <ClCompile Include="CE_Scene.cpp" />
     <ClCompile Include="CE_Swapchain.cpp" />
     <ClCompile Include="CE_VDevice.cpp" />

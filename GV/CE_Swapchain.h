@@ -28,11 +28,6 @@ public:
 
 	VkImageView createImageView(CE_VDevice* _Device, VkImage _image, VkFormat _format, VkImageAspectFlags _aspectFlages);
 
-	void createFramebuffers();
-
-
-	void recreateSwapChain();
-
 	void cleanupSwapChain(CE_VDevice* _VDevice);
 
 	static void framebufferResizeCallback(GLFWwindow* _window, int _width, int _height);
@@ -40,6 +35,8 @@ public:
 
 	// GV_Module을(를) 통해 상속됨
 	virtual void DestroyInstance(VkDevice _device) override;
+
+	VkExtent2D GetSwapchainExtent();
 
 private:
 	std::vector<VkFramebuffer> m_SwapChainFramebuffers;

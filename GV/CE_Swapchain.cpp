@@ -22,17 +22,56 @@ void CE_Swapchain::createSurface(VkInstance _Vk, CE_Window* _Window)
 
 bool CE_Swapchain::checkDeviceExtensionSupport(VkPhysicalDevice _device)
 {
-	return false;
+	uint32_t extensionCount;
+	vkEnumerateDeviceExtensionProperties(_device, nullptr, &extensionCount, nullptr);
+
+	std::vector<VkExtensionProperties> availableExtensions(extensionCount);
+	vkEnumerateDeviceExtensionProperties(_device, nullptr, &extensionCount, availableExtensions.data());
+
+	std::set<std::string> requiredExtensions(deviceExtensions.begin(), deviceExtensions.end());
+
+	for (const VkExtensionProperties& extension : availableExtensions)
+		requiredExtensions.erase(extension.extensionName);
+
+	return requiredExtensions.empty();
 }
 
 SwapChainSupportDetails CE_Swapchain::querySwapChainSupport(VkPhysicalDevice _device)
 {
-	return SwapChainSupportDetails();
+	SwapChainSupportDetails details;
+
+	vkGetPhysicalDeviceSurfaceCapabilitiesKHR(_device, m_Surface, &details.capabilities);
+
+	uint32_t formatCount;
+	vkGetPhysicalDeviceSurfaceFormatsKHR(_device, m_Surface, &formatCount, nullptr);
+
+	if (formatCount != 0)
+	{
+		details.formats.resize(formatCount);
+		vkGetPhysicalDeviceSurfaceFormatsKHR(_device, m_Surface, &formatCount, details.formats.data());
+	}
+
+	uint32_t presentModeCount;
+	vkGetPhysicalDeviceSurfacePresentModesKHR(_device, m_Surface, &presentModeCount, nullptr);
+
+	if (presentModeCount != 0)
+	{
+		details.presentModes.resize(presentModeCount);
+		vkGetPhysicalDeviceSurfacePresentModesKHR(_device, m_Surface, &presentModeCount, details.presentModes.data());
+	}
+
+	return details;
 }
 
 VkSurfaceFormatKHR CE_Swapchain::chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& _availableFormats)
 {
-	return VkSurfaceFormatKHR();
+	for (const VkSurfaceFormatKHR& availableFormat : _availableFormats)
+	{
+		if ((availableFormat.format == VK_FORMAT_B8G8R8A8_SRGB) && (availableFormat.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR))
+			return availableFormat;
+	}
+
+	return _availableFormats[0];
 }
 
 VkPresentModeKHR CE_Swapchain::chooseSwapPresentMode(const std::vector<VkPresentModeKHR>& _avaliablePresentModes)
@@ -188,14 +227,6 @@ VkImageView CE_Swapchain::createImageView(CE_VDevice* _Device, VkImage _image, V
 	return imageView;
 }
 
-void CE_Swapchain::createFramebuffers()
-{
-}
-
-void CE_Swapchain::recreateSwapChain()
-{
-}
-
 void CE_Swapchain::cleanupSwapChain(CE_VDevice* _VDevice)
 {
 	for (size_t Count = 0; m_SwapChainFramebuffers.size() > Count; ++Count)
@@ -213,4 +244,9 @@ void CE_Swapchain::framebufferResizeCallback(GLFWwindow* _window, int _width, in
 
 void CE_Swapchain::DestroyInstance(VkDevice _device)
 {
+}
+
+VkExtent2D CE_Swapchain::GetSwapchainExtent()
+{
+	return m_SwapChainExtent;
 }

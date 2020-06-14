@@ -30,6 +30,7 @@
 #include "GV_Module.h"
 #include "CE_Window.h"
 #include "CE_Swapchain.h"
+#include "CE_RenderPass.h"
 #include "CE_PDevice.h"
 #include "CE_VDevice.h"
 #include "CE_Scene.h"
@@ -72,6 +73,10 @@ namespace GV_Core
 
 		void CheckSuccessInRuntime(VkResult _result, char* _comment);
 		void CheckSuccessInRuntime(VkResult _result, const char* _comment);
+
+		void createFramebuffers();
+
+		void recreateSwapChain();
 
 	protected:
 #pragma region Validation Layers
