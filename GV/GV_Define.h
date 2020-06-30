@@ -23,3 +23,8 @@ const std::vector<const char*> deviceExtensions = { VK_KHR_SWAPCHAIN_EXTENSION_N
 
 const std::vector<const char*> validationLayers = { "VK_LAYER_KHRONOS_validation" };
 #endif // !GVDEFINE_H__
+
+#include "GV_Base.h"
+#include "CE_Module.h"
+#include "GV_Builder.h"
+#include "Buffer_Builder.h"

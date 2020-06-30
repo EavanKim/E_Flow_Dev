@@ -227,6 +227,31 @@ VkImageView CE_Swapchain::createImageView(CE_VDevice* _Device, VkImage _image, V
 	return imageView;
 }
 
+void CE_Swapchain::createFrameBuffers(CE_VDevice* _Device)
+{
+	m_SwapChainFramebuffers.resize(m_SwapChainImageViews.size());
+
+	for (size_t Count = 0; m_SwapChainImageViews.size() > Count; ++Count)
+	{
+
+		std::array<VkImageView, 1> attachements = { m_SwapChainImageViews[Count] };
+
+		//std::array<VkImageView, 2> attachements = { m_SwapChainImageViews[Count], m_DepthImageView };
+
+		VkFramebufferCreateInfo framebufferInfo = {};
+		framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
+		framebufferInfo.renderPass = _Device->GetRenderPass();
+		framebufferInfo.attachmentCount = static_cast<uint32_t>(attachements.size());
+		framebufferInfo.pAttachments = attachements.data();
+		framebufferInfo.width = m_SwapChainExtent.width;
+		framebufferInfo.height = m_SwapChainExtent.height;
+		framebufferInfo.layers = 1;
+
+		if (vkCreateFramebuffer(_Device->GetDevice(), &framebufferInfo, nullptr, &m_SwapChainFramebuffers[Count]) != VK_SUCCESS)
+			throw std::runtime_error("failed to create framebuffer!");
+	}
+}
+
 void CE_Swapchain::cleanupSwapChain(CE_VDevice* _VDevice)
 {
 	for (size_t Count = 0; m_SwapChainFramebuffers.size() > Count; ++Count)
@@ -240,10 +265,12 @@ void CE_Swapchain::cleanupSwapChain(CE_VDevice* _VDevice)
 
 void CE_Swapchain::framebufferResizeCallback(GLFWwindow* _window, int _width, int _height)
 {
+
 }
 
 void CE_Swapchain::DestroyInstance(VkDevice _device)
 {
+
 }
 
 VkExtent2D CE_Swapchain::GetSwapchainExtent()

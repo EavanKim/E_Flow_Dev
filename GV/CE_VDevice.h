@@ -12,6 +12,7 @@ public:
 	virtual void DestroyInstance(VkDevice _device) override;
 
 	VkDevice GetDevice();
+	VkRenderPass GetRenderPass();
 
 private:
 	VkQueue m_GraphicsQueue = nullptr;

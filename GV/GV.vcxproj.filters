@@ -94,6 +94,36 @@
     <Filter Include="GraphicCore\Module\Scene\Builder">
       <UniqueIdentifier>{7c6d44f6-bd43-4d24-86f9-9d6e9be6f628}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GraphicCore\Module\Scene\Builder\Player">
+      <UniqueIdentifier>{29933ff7-5c3c-4cb0-9514-24d63c58242c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module\Scene\Builder\Enemy">
+      <UniqueIdentifier>{9bb8ebc7-ce15-4884-9549-8019571398df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module\Scene\Builder\Geometry">
+      <UniqueIdentifier>{236245ec-9c10-42c7-a84f-13f5a4be2862}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module\Scene\Builder\Particle">
+      <UniqueIdentifier>{736002e4-5e12-48ad-9f93-be87485ca0d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module\Scene\Builder\Fluid">
+      <UniqueIdentifier>{2fc573c4-04c9-403f-8149-ea0fba5e9910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module\Scene\Fluid">
+      <UniqueIdentifier>{172eaf92-2bec-49fd-86a3-777bcdbea913}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Concrete\Timer">
+      <UniqueIdentifier>{478db6d5-8cd4-4e6c-a6ff-1382b2380e87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mgr">
+      <UniqueIdentifier>{a850a4eb-3808-4d16-a90c-cd5ef682c893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Concrete\Module">
+      <UniqueIdentifier>{ccf14b66-a576-4fb4-b2c0-783837a6cf9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicCore\Module\Buffer">
+      <UniqueIdentifier>{75b89b1d-38ec-4d33-b0ee-1bbcdd29a2b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GV.h">
@@ -157,7 +187,6 @@
     <ClInclude Include="GV_SubPass.h">
       <Filter>Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
     </ClInclude>
-    <ClInclude Include="CFluid_Mgr.h" />
     <ClInclude Include="GV_Module.h">
       <Filter>GraphicCore\Module</Filter>
     </ClInclude>
@@ -173,11 +202,26 @@
     <ClInclude Include="CE_Swapchain.h">
       <Filter>GraphicCore\Module\SwapChain</Filter>
     </ClInclude>
-    <ClInclude Include="CE_Scene.h">
-      <Filter>GraphicCore\Module\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="CE_RenderPass.h">
       <Filter>GraphicCore\Module\RenderPass</Filter>
+    </ClInclude>
+    <ClInclude Include="CE_Builder.h">
+      <Filter>GraphicCore\Module\Scene\Builder</Filter>
+    </ClInclude>
+    <ClInclude Include="Fluid_Scene.h">
+      <Filter>GraphicCore\Module\Scene\Fluid</Filter>
+    </ClInclude>
+    <ClInclude Include="GV_Timer.h">
+      <Filter>Concrete\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="GV_Base.h">
+      <Filter>abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="CE_Module.h">
+      <Filter>Concrete\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="CE_RenderQueue.h">
+      <Filter>GraphicCore\Module\Buffer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -231,7 +275,6 @@
     <ClCompile Include="GV_SubPass.cpp">
       <Filter>Concrete\Function\Collision\Module\RenderPass\SubPass</Filter>
     </ClCompile>
-    <ClCompile Include="CFluid_Mgr.cpp" />
     <ClCompile Include="GV_Module.cpp">
       <Filter>GraphicCore\Module</Filter>
     </ClCompile>
@@ -247,11 +290,23 @@
     <ClCompile Include="CE_Swapchain.cpp">
       <Filter>GraphicCore\Module\SwapChain</Filter>
     </ClCompile>
-    <ClCompile Include="CE_Scene.cpp">
-      <Filter>GraphicCore\Module\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="CE_RenderPass.cpp">
       <Filter>GraphicCore\Module\RenderPass</Filter>
+    </ClCompile>
+    <ClCompile Include="CE_Builder.cpp">
+      <Filter>GraphicCore\Module\Scene\Builder</Filter>
+    </ClCompile>
+    <ClCompile Include="Fluid_Scene.cpp">
+      <Filter>GraphicCore\Module\Scene\Fluid</Filter>
+    </ClCompile>
+    <ClCompile Include="GV_Timer.cpp">
+      <Filter>Concrete\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="CE_Module.cpp">
+      <Filter>Concrete\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="CE_RenderQueue.cpp">
+      <Filter>GraphicCore\Module\Buffer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

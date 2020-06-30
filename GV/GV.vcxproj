@@ -21,14 +21,17 @@
   <ItemGroup>
     <ClInclude Include="AABB_Function.h" />
     <ClInclude Include="BSP_Function.h" />
+    <ClInclude Include="CE_Builder.h" />
+    <ClInclude Include="CE_Module.h" />
     <ClInclude Include="CE_PDevice.h" />
     <ClInclude Include="CE_RenderPass.h" />
-    <ClInclude Include="CE_Scene.h" />
     <ClInclude Include="CE_Swapchain.h" />
     <ClInclude Include="CE_VDevice.h" />
     <ClInclude Include="CE_Window.h" />
-    <ClInclude Include="CFluid_Mgr.h" />
+    <ClInclude Include="CE_RenderQueue.h" />
     <ClInclude Include="CVulkan_Core.h" />
+    <ClInclude Include="Fluid_Scene.h" />
+    <ClInclude Include="GV_Base.h" />
     <ClInclude Include="GV_Buffer.h" />
     <ClInclude Include="GV_Camera.h" />
     <ClInclude Include="GV_Define.h" />
@@ -42,6 +45,7 @@
     <ClInclude Include="GV_Scene.h" />
     <ClInclude Include="GV_Struct.h" />
     <ClInclude Include="GV_SubPass.h" />
+    <ClInclude Include="GV_Timer.h" />
     <ClInclude Include="OBB_Fuction.h" />
     <ClInclude Include="Poly_Scene.h" />
     <ClInclude Include="resource.h" />
@@ -52,20 +56,23 @@
   <ItemGroup>
     <ClCompile Include="AABB_Function.cpp" />
     <ClCompile Include="BSP_Function.cpp" />
+    <ClCompile Include="CE_Builder.cpp" />
+    <ClCompile Include="CE_Module.cpp" />
     <ClCompile Include="CE_PDevice.cpp" />
     <ClCompile Include="CE_RenderPass.cpp" />
-    <ClCompile Include="CE_Scene.cpp" />
     <ClCompile Include="CE_Swapchain.cpp" />
     <ClCompile Include="CE_VDevice.cpp" />
     <ClCompile Include="CE_Window.cpp" />
-    <ClCompile Include="CFluid_Mgr.cpp" />
+    <ClCompile Include="CE_RenderQueue.cpp" />
     <ClCompile Include="CVulkan_Core.cpp" />
+    <ClCompile Include="Fluid_Scene.cpp" />
     <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="GV_Camera.cpp" />
     <ClCompile Include="GV_Module.cpp" />
     <ClCompile Include="GV_Obj.cpp" />
     <ClCompile Include="GV_Scene.cpp" />
     <ClCompile Include="GV_SubPass.cpp" />
+    <ClCompile Include="GV_Timer.cpp" />
     <ClCompile Include="OBB_Fuction.cpp" />
     <ClCompile Include="Poly_Scene.cpp" />
     <ClCompile Include="Sprite_Obj.cpp" />

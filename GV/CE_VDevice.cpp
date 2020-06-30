@@ -210,3 +210,8 @@ VkDevice CE_VDevice::GetDevice()
 {
 	return m_Device;
 }
+
+VkRenderPass CE_VDevice::GetRenderPass()
+{
+	return m_RenderPass;
+}

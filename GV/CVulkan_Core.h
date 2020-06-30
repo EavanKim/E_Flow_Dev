@@ -25,15 +25,16 @@
 
 #include "GV_Functor.h"
 #include "GV_Struct.h"
+#include "GV_Timer.h"
 
 #include "GV_Instance.h"
 #include "GV_Module.h"
+#include "CE_RenderQueue.h"
 #include "CE_Window.h"
 #include "CE_Swapchain.h"
 #include "CE_RenderPass.h"
 #include "CE_PDevice.h"
 #include "CE_VDevice.h"
-#include "CE_Scene.h"
 
 #include "GV_Buffer.h"
 #include "GV_Image.h"
@@ -51,6 +52,10 @@
 #include "GV_Scene.h"
 #include "Sprite_Scene.h"
 #include "Poly_Scene.h"
+
+#include "CE_Builder.h"
+#include "Fluid_Scene.h"
+
 
 namespace GV_Core
 {
@@ -75,8 +80,10 @@ namespace GV_Core
 		void CheckSuccessInRuntime(VkResult _result, const char* _comment);
 
 		void createFramebuffers();
-
 		void recreateSwapChain();
+
+		void Render_Begin();
+		void Render_End();
 
 	protected:
 #pragma region Validation Layers
@@ -120,7 +127,7 @@ namespace GV_Core
 		CE_PDevice* m_PhysicalDevice = nullptr;
 		CE_VDevice* m_VirtualDevice = nullptr;
 		CE_Swapchain* m_Swapchain = nullptr;
-		std::unordered_map<std::string, GV_Module*>* m_Modules = nullptr;
+		std::map<std::string, GV_Module*>* m_Modules = nullptr;
 
 		static CVulkan_Core* m_Instance;
 	};

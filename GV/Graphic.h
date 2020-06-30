@@ -31,7 +31,6 @@
 #include "CE_RenderPass.h"
 #include "CE_PDevice.h"
 #include "CE_VDevice.h"
-#include "CE_Scene.h"
 
 #include "GV_Buffer.h"
 #include "GV_Image.h"
@@ -44,11 +43,14 @@
 #include "OBB_Fuction.h"
 #include "BSP_Function.h"
 
+#include "GV_SubPass.h"
+
 #include "GV_Scene.h"
 #include "Sprite_Scene.h"
 #include "Poly_Scene.h"
 
-#include "CFluid_Mgr.h"
+#include "CE_Builder.h"
+#include "Fluid_Scene.h"
 
 class GRAPHIC_API Graphic_Vulkan
 {
